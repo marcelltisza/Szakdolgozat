@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.UI", "Sudoku.UI\Sudoku.UI.csproj", "{828E961D-C6AD-4607-9124-108D7C759069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.DataAccecss", "Sudoku.DataAccecss\Sudoku.DataAccecss.csproj", "{176D03BF-AFD7-4BC6-90E4-5A0D2987D359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Models", "Sudoku.Models\Sudoku.Models.csproj", "{E03C38AB-F7F4-4D6C-BB97-6840C88AB06C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.Services", "Sudoku.Services\Sudoku.Services.csproj", "{FD28E4FD-5357-4923-B68F-FE33330E4DA2}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{828E961D-C6AD-4607-9124-108D7C759069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828E961D-C6AD-4607-9124-108D7C759069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828E961D-C6AD-4607-9124-108D7C759069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828E961D-C6AD-4607-9124-108D7C759069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176D03BF-AFD7-4BC6-90E4-5A0D2987D359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176D03BF-AFD7-4BC6-90E4-5A0D2987D359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176D03BF-AFD7-4BC6-90E4-5A0D2987D359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176D03BF-AFD7-4BC6-90E4-5A0D2987D359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03C38AB-F7F4-4D6C-BB97-6840C88AB06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03C38AB-F7F4-4D6C-BB97-6840C88AB06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03C38AB-F7F4-4D6C-BB97-6840C88AB06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03C38AB-F7F4-4D6C-BB97-6840C88AB06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

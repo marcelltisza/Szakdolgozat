@@ -1,0 +1,106 @@
+﻿<Page x:Class="Sudoku.UI.Views.GameView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sudoku.UI.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" 
+      d:DesignWidth="700"
+      Title="GameView"
+      Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <!-- UPPER CONTROL ITEMS -->
+        <Grid Margin="0,0,0,5.6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="MenuButton" Content="Menu"/>
+            <Button x:Name="UndoButton" Content="Undo" Grid.Column="1"/>
+            <Button x:Name="RedoButton" Content="Redo" Grid.Column="2"/>
+            <Button x:Name="ResetButton" Content="Reset" Grid.Column="3"/>
+            <Button x:Name="NightModeButton" Content="Night" Grid.Column="5"/>
+            <Button x:Name="HintButton" Content="Hint" Grid.Column="6"/>
+        </Grid>
+
+        <!-- PLAY AREA -->
+        <Grid Grid.Row="1" Margin="0,0.4,0,2.6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+                <!-- SUDOKU -->
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+                <!-- HISTORY -->
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="260"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Label Background="Aqua"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center">
+                Sudoku
+            </Label>
+            <Label Background="Aqua"
+                   Grid.Row="1"
+                   Grid.Column="3"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center">
+                History
+            </Label>
+        </Grid>
+
+        <!-- LOWER CONTROL ITEMS -->
+        <Grid Grid.Row="2" Margin="0,2.4,0,-0.4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140*"/>
+                <ColumnDefinition Width="330*"/>
+                <!-- NUMBERS -->
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="45*"/>
+                <!-- NOTE TOGGLE -->
+                <ColumnDefinition Width="140*"/>
+            </Grid.ColumnDefinitions>
+            <Label Background="Aqua"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center" Margin="0.2,5.4,0.4,7.4">
+                Numbers
+            </Label>
+            <Button 
+                   Grid.Row="1"
+                   Grid.Column="2"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Margin="40.6,5.4,0,7.4">
+                Note
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

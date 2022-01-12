@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sudoku.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Sudoku App" 
+        Height="450" 
+        Width="700">
+    
     <Grid>
-        
+        <Frame x:Name="MainFrame"/>
     </Grid>
+    
 </Window>

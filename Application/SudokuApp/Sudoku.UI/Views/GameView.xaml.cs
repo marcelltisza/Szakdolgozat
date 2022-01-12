@@ -1,5 +1,4 @@
-﻿using Sudoku.UI.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sudoku.UI
+namespace Sudoku.UI.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GameView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameView : Page
     {
-        public MainWindow()
+        public GameView()
         {
             InitializeComponent();
-            MainFrame.Content = new GameView();
         }
     }
 }

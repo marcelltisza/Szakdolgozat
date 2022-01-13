@@ -13,7 +13,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -40,7 +40,8 @@
         </Grid>
 
         <!-- PLAY AREA -->
-        <Grid Grid.Row="1" Margin="0,0.4,0,2.6">
+        <Grid x:Name="PlayArea" 
+              Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="8*"/>
@@ -55,13 +56,30 @@
                 <RowDefinition Height="260"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Label Background="Aqua"
-                   Grid.Row="1"
-                   Grid.Column="1"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center">
-                Sudoku
-            </Label>
+            <Grid x:Name="SudokuGrid"
+                  Grid.Row="1"
+                  Grid.Column="1">
+                
+            </Grid>
+            <Border x:Name="SudokuBorder"
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    Grid.Row="1"
+                    Grid.Column="1">
+                <Grid x:Name="Minigrids"
+                      Background="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Border>
             <Label Background="Aqua"
                    Grid.Row="1"
                    Grid.Column="3"

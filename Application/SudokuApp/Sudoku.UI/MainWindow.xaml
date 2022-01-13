@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Sudoku.UI"
         mc:Ignorable="d"
         Title="Sudoku App" 
-        Height="450" 
+        Height="500" 
         Width="700">
     
     <Grid>

@@ -66,7 +66,7 @@
                     BorderThickness="3"
                     Grid.Row="1"
                     Grid.Column="1"
-                    Padding="0.5">
+                    Padding="0.3">
                 <Grid x:Name="Minigrids"
                       Background="Transparent">
                     <Grid.RowDefinitions>

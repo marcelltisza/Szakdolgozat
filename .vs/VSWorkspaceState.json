@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Application",
+    "\\Application\\SudokuApp",
+    "\\Application\\SudokuApp\\Sudoku.UI",
+    "\\Application\\SudokuApp\\Sudoku.UI\\Views"
   ],
-  "SelectedNode": "\\SudokuApp.sln",
+  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\GameView.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

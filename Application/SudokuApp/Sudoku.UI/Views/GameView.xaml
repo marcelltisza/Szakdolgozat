@@ -59,13 +59,14 @@
             <Grid x:Name="SudokuGrid"
                   Grid.Row="1"
                   Grid.Column="1">
-                
+
             </Grid>
             <Border x:Name="SudokuBorder"
                     BorderBrush="Black"
                     BorderThickness="3"
                     Grid.Row="1"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    Padding="0.5">
                 <Grid x:Name="Minigrids"
                       Background="Transparent">
                     <Grid.RowDefinitions>
@@ -80,6 +81,11 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </Border>
+            <Grid x:Name="InputGrid"
+                  Grid.Row="1"
+                  Grid.Column="1">
+
+            </Grid>
             <Label Background="Aqua"
                    Grid.Row="1"
                    Grid.Column="3"
@@ -105,20 +111,18 @@
                 <!-- NOTE TOGGLE -->
                 <ColumnDefinition Width="140*"/>
             </Grid.ColumnDefinitions>
-            <Label Background="Aqua"
-                   Grid.Row="1"
-                   Grid.Column="1"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center" Margin="0.2,5.4,0.4,7.4">
-                Numbers
-            </Label>
-            <Button 
+            <Grid x:Name="NumberGrid"
+                  Grid.Row="1"
+                  Grid.Column="1">
+            </Grid>
+            
+            <ToggleButton 
                    Grid.Row="1"
                    Grid.Column="2"
                    VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Margin="40.6,5.4,0,7.4">
                 Note
-            </Button>
+            </ToggleButton>
         </Grid>
     </Grid>
 </Page>

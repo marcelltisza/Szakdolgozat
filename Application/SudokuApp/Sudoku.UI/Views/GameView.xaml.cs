@@ -1,4 +1,5 @@
-﻿using Sudoku.UI.ViewModels;
+﻿using Sudoku.UI.Models;
+using Sudoku.UI.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -10,6 +11,8 @@ namespace Sudoku.UI.Views
     {
         public string SelectedNumber { get; set; }
         private GameViewModel gameViewModel = new GameViewModel();
+        private bool processingNumberChecked = false;
+        public bool NoteMode { get; set; }
 
         public GameView()
         {
@@ -37,18 +40,76 @@ namespace Sudoku.UI.Views
                 {
                     var cell = gameViewModel.Board.Cells[i, j];
 
-                    if (!cell.IsFixed)
+                    Button button = new Button();
+                    button.Content = CreateInputField(cell);
+                    button.Background = Brushes.Transparent;
+                    button.Click += Cell_Click;
+                    button.Tag = cell;
+                    Grid.SetRow(button, i);
+                    Grid.SetColumn(button, j);
+                    InputGrid.Children.Add(button);
+
+                    if (cell.IsFixed)
                     {
-                        Button button = new Button();
-                        button.Content = cell.Value;
-                        button.Background = Brushes.Transparent;
-                        button.BorderThickness = new Thickness(0);
-                        button.Margin = new Thickness(1);
-                        button.Click += Cell_Click;
-                        button.Tag = cell;
-                        Grid.SetRow(button, i);
-                        Grid.SetColumn(button, j);
-                        InputGrid.Children.Add(button);
+                        button.IsHitTestVisible = false;
+                        button.FontWeight = FontWeights.Bold;
+                        button.Background = Brushes.LightGray;
+                    }
+                }
+            }
+        }
+
+        public Grid CreateInputField(SudokuCell cell)
+        {
+            Grid grid = new Grid();
+            Label value = new Label();
+            value.Content = cell.Value;
+            grid.Children.Add(value);
+            Grid notes = new Grid();
+            grid.Children.Add(notes);
+            for (int i = 0; i < 9; i++)
+            {
+                grid.RowDefinitions.Add(new RowDefinition());
+                grid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    Label note = new Label();
+                    note.Content = $"{i}{j}";
+                    Grid.SetRow(note, i);
+                    Grid.SetColumn(note, j);
+                    notes.Children.Add(note);
+                }
+            }
+            return grid;
+        }
+
+        public void CreateNoteGrid()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                NoteGrid.RowDefinitions.Add(new RowDefinition());
+                NoteGrid.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    Label label = new Label();
+                    Grid notes = new Grid();
+                    label.Content = notes;
+                    Grid.SetRow(notes, i);
+                    Grid.SetColumn(notes, j);
+                    for (int k = 0; k < 9; k++)
+                    {
+                        for (int l = 0; l < 9; l++)
+                        {
+                            notes.RowDefinitions.Add(new RowDefinition());
+                            notes.ColumnDefinitions.Add(new ColumnDefinition());
+                        }
                     }
                 }
             }
@@ -73,19 +134,10 @@ namespace Sudoku.UI.Views
                     Grid.SetRow(border, i);
                     Grid.SetColumn(border, j);
                     SudokuGrid.Children.Add(border);
-                    if (cell.IsFixed)
-                    {
-                        Label label = new Label();
-                        label.Content = cell.Value;
-                        label.FontWeight = FontWeights.Bold;
-                        label.Background = Brushes.LightGray;
-                        label.VerticalContentAlignment = VerticalAlignment.Center;
-                        label.HorizontalContentAlignment = HorizontalAlignment.Center;
-                        border.Child = label;
-                    }
                 }
             }
 
+            // Minigrids
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -107,9 +159,21 @@ namespace Sudoku.UI.Views
 
         private void Cell_Click(object sender, RoutedEventArgs e)
         {
+            var button = (Button)sender;
+            var cell = (SudokuCell)button.Tag;
+
             if (!string.IsNullOrEmpty(SelectedNumber))
             {
                 ((Button)sender).Content = SelectedNumber;
+                ((SudokuCell)((Button)sender).Tag).Value = SelectedNumber;
+                
+            }
+
+            if (!gameViewModel.CheckErrorsForCell(Grid.GetRow(button), Grid.GetColumn(button)))
+            {
+                button.FontWeight = FontWeights.Bold;
+                button.Background = Brushes.LightCoral;
+                return;
             }
         }
 
@@ -130,7 +194,12 @@ namespace Sudoku.UI.Views
 
         private void Number_Checked(object sender, RoutedEventArgs e)
         {
+            if (processingNumberChecked)
+                return;
+            processingNumberChecked = true;
+
             var selectedNumber = sender as ToggleButton;
+            
             foreach (ToggleButton number in NumberGrid.Children)
             {
                 if (number.Content != selectedNumber.Content)
@@ -140,8 +209,27 @@ namespace Sudoku.UI.Views
             }
 
             SelectedNumber = selectedNumber.IsChecked == true ? selectedNumber.Content.ToString() : "";
+            processingNumberChecked = false;
         }
 
+        private void NoteToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            NoteMode = true;
 
+            foreach (ToggleButton button in NumberGrid.Children)
+            {
+                button.Background = Brushes.LightGoldenrodYellow;
+            }
+        }
+
+        private void NoteToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            NoteMode = false;
+
+            foreach (ToggleButton button in NumberGrid.Children)
+            {
+                button.Background = Brushes.LightGray;
+            }
+        }
     }
 }

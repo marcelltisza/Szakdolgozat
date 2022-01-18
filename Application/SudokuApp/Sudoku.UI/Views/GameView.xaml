@@ -56,6 +56,11 @@
                 <RowDefinition Height="260"/>
                 <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
+            <Grid x:Name="InputGrid"
+                  Grid.Row="1"
+                  Grid.Column="1">
+
+            </Grid>
             <Grid x:Name="SudokuGrid"
                   Grid.Row="1"
                   Grid.Column="1">
@@ -63,12 +68,13 @@
             </Grid>
             <Border x:Name="SudokuBorder"
                     BorderBrush="Black"
-                    BorderThickness="3"
+                    BorderThickness="1.5"
                     Grid.Row="1"
                     Grid.Column="1"
-                    Padding="0.3">
+                    IsHitTestVisible="False">
                 <Grid x:Name="Minigrids"
-                      Background="Transparent">
+                      Background="Transparent"
+                      IsHitTestVisible="False">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -81,11 +87,11 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </Border>
-            <Grid x:Name="InputGrid"
-                  Grid.Row="1"
-                  Grid.Column="1">
-
+            <Grid x:Name="NoteGrid"
+                  IsHitTestVisible="False">
+                
             </Grid>
+            
             <Label Background="Aqua"
                    Grid.Row="1"
                    Grid.Column="3"
@@ -116,11 +122,15 @@
                   Grid.Column="1">
             </Grid>
             
-            <ToggleButton 
-                   Grid.Row="1"
-                   Grid.Column="2"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Margin="40.6,5.4,0,7.4">
+            <ToggleButton x:Name="NoteToggle" 
+                          Checked="NoteToggle_Checked"
+                          Unchecked="NoteToggle_Unchecked"
+                          Grid.Row="1"
+                          Grid.Column="2"
+                          VerticalContentAlignment="Center"
+                          HorizontalContentAlignment="Center" 
+                          Grid.ColumnSpan="2" 
+                          Margin="40.6,5.4,0,7.4">
                 Note
             </ToggleButton>
         </Grid>

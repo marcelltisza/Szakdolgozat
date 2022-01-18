@@ -41,7 +41,7 @@ namespace Sudoku.UI.Views
                     var cell = gameViewModel.Board.Cells[i, j];
 
                     Button button = new Button();
-                    button.Content = CreateInputField(cell);
+                    button.Content = cell.Value;
                     button.Background = Brushes.Transparent;
                     button.Click += Cell_Click;
                     button.Tag = cell;
@@ -63,6 +63,7 @@ namespace Sudoku.UI.Views
         {
             Grid grid = new Grid();
             Label value = new Label();
+            value.Visibility = Visibility.Hidden;
             value.Content = cell.Value;
             grid.Children.Add(value);
             Grid notes = new Grid();
@@ -77,7 +78,7 @@ namespace Sudoku.UI.Views
                 for (int j = 0; j < 9; j++)
                 {
                     Label note = new Label();
-                    note.Content = $"{i}{j}";
+                    note.Content = $"1";
                     Grid.SetRow(note, i);
                     Grid.SetColumn(note, j);
                     notes.Children.Add(note);

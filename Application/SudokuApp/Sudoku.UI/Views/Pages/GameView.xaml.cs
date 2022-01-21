@@ -1,5 +1,6 @@
 ﻿using Sudoku.UI.Models;
 using Sudoku.UI.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -20,6 +21,7 @@ namespace Sudoku.UI.Views
 
             DataContext = gameViewModel;
 
+            CreateNoteGrid();
             CreateInputGrid();
             CreateGridlines();
             
@@ -59,34 +61,6 @@ namespace Sudoku.UI.Views
             }
         }
 
-        public Grid CreateInputField(SudokuCell cell)
-        {
-            Grid grid = new Grid();
-            Label value = new Label();
-            value.Visibility = Visibility.Hidden;
-            value.Content = cell.Value;
-            grid.Children.Add(value);
-            Grid notes = new Grid();
-            grid.Children.Add(notes);
-            for (int i = 0; i < 9; i++)
-            {
-                grid.RowDefinitions.Add(new RowDefinition());
-                grid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
-                {
-                    Label note = new Label();
-                    note.Content = $"1";
-                    Grid.SetRow(note, i);
-                    Grid.SetColumn(note, j);
-                    notes.Children.Add(note);
-                }
-            }
-            return grid;
-        }
-
         public void CreateNoteGrid()
         {
             for (int i = 0; i < 9; i++)
@@ -99,17 +73,32 @@ namespace Sudoku.UI.Views
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Label label = new Label();
+                    var cell = gameViewModel.Board.Cells[i, j];
+
                     Grid notes = new Grid();
-                    label.Content = notes;
+                    notes.Margin = new Thickness(2);
                     Grid.SetRow(notes, i);
                     Grid.SetColumn(notes, j);
-                    for (int k = 0; k < 9; k++)
+                    NoteGrid.Children.Add(notes);
+
+                    for (int k = 0; k < 3; k++)
                     {
-                        for (int l = 0; l < 9; l++)
+                        notes.ColumnDefinitions.Add(new ColumnDefinition());
+                        notes.RowDefinitions.Add(new RowDefinition());
+                    }
+
+                    for (int k = 0; k < 3; k++)
+                    {
+                        for (int l = 0; l < 3; l++)
                         {
-                            notes.RowDefinitions.Add(new RowDefinition());
-                            notes.ColumnDefinitions.Add(new ColumnDefinition());
+                            Button note = new Button();
+                            note.FontSize = 6;
+                            note.Background = Brushes.Transparent;
+                            note.BorderThickness = new Thickness(0);
+                            note.Content = cell.Notes[3 * k + l] == '0' ? ' ' : cell.Notes[3 * k + l];
+                            Grid.SetRow(note, k);
+                            Grid.SetColumn(note, l);
+                            notes.Children.Add(note);
                         }
                     }
                 }
@@ -162,19 +151,65 @@ namespace Sudoku.UI.Views
         {
             var button = (Button)sender;
             var cell = (SudokuCell)button.Tag;
+            var row = Grid.GetRow(button);
+            var column = Grid.GetColumn(button);
+            Grid selectedNotes = new Grid();
+
+            if (NoteMode && !string.IsNullOrEmpty(SelectedNumber))
+            {
+                foreach (Grid notes in NoteGrid.Children)
+                {
+                    if (Grid.GetRow(notes) == row && Grid.GetColumn(notes) == column)
+                    {
+                        selectedNotes = notes;
+                        break;
+                    }
+                }
+
+                if (cell.Notes[Convert.ToInt32(SelectedNumber) - 1] != '0')
+                {
+                    cell.SetNote(Convert.ToInt32(SelectedNumber) - 1, "0");
+                    ((Button)selectedNotes.Children[Convert.ToInt32(SelectedNumber) - 1]).Content = "";
+                    return;
+                }
+
+                
+
+                string newNotes = "";
+                for (int i = 0; i < cell.Notes.Length; i++)
+                {
+                    if (i == Convert.ToInt32(SelectedNumber) - 1)
+                    {
+                        newNotes += SelectedNumber;
+                    }
+                    else
+                    {
+                        newNotes += cell.Notes[i];
+                    }
+                }
+
+                ((Button)selectedNotes.Children[Convert.ToInt32(SelectedNumber) - 1]).Content = SelectedNumber;
+                cell.Notes = newNotes;
+                return;
+            }
 
             if (!string.IsNullOrEmpty(SelectedNumber))
             {
+                if (cell.Value == SelectedNumber)
+                {
+                    button.Content = "";
+                    cell.Value = "";
+                    return;
+                }
+
                 ((Button)sender).Content = SelectedNumber;
                 ((SudokuCell)((Button)sender).Tag).Value = SelectedNumber;
-                
-            }
-
-            if (!gameViewModel.CheckErrorsForCell(Grid.GetRow(button), Grid.GetColumn(button)))
-            {
-                button.FontWeight = FontWeights.Bold;
-                button.Background = Brushes.LightCoral;
-                return;
+                if (!gameViewModel.CheckErrorsForCell(row, column))
+                {
+                    button.FontWeight = FontWeights.Bold;
+                    button.Background = Brushes.LightCoral;
+                    return;
+                }
             }
         }
 

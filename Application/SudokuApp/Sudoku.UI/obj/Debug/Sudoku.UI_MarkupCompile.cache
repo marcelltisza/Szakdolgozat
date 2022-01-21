@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\App.xaml
-3724533363
+3187725649
 
-12768020154
+141152506374
 13-1505183044
-MainWindow.xaml;Views\GameView.xaml;Views\MenuView.xaml;
+Views\Windows\MainWindow.xaml;Views\Pages\GameView.xaml;Views\Pages\MenuView.xaml;
 
 False
 

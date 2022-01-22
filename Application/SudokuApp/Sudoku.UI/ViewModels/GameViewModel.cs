@@ -1,17 +1,44 @@
 ﻿using Sudoku.UI.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Windows.Threading;
 
 namespace Sudoku.UI.ViewModels
 {
-    public class GameViewModel
+    public class GameViewModel : INotifyPropertyChanged
     {
         public SudokuBoard Board { get; set; }
+        public TimeSpan PlayTime 
+        { 
+            get => playTime;
+            set 
+            {
+                if (playTime != value)
+                {
+                    playTime = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(PlayTime)));
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private DispatcherTimer _timer = new DispatcherTimer();
+        private TimeSpan playTime;
 
         public GameViewModel()
         {
             Board = new SudokuBoard(GenerateTestInput()); // DELETE LATER
+            _timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Tick += _timer_Tick;
+            _timer.Start();
+        }
+
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            PlayTime = PlayTime.Add(new TimeSpan(0, 0, 1));
         }
 
         public SudokuCell[,] GenerateTestInput()

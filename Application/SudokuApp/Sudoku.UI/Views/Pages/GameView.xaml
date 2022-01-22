@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
         <!-- UPPER CONTROL ITEMS -->
-        <Grid Margin="0,0,0,5.6">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -52,26 +52,27 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="260"/>
-                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
+            <Label x:Name="TimeLabel" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.ColumnSpan="5"
+                   FontWeight="Bold"
+                   FontSize="15"
+                   Content="{Binding PlayTime}">
+            </Label>
             <Grid x:Name="NoteGrid"
                   IsHitTestVisible="False"
                   Grid.Row="1"
-                  Grid.Column="1">
-
-            </Grid>
+                  Grid.Column="1"/>
             <Grid x:Name="InputGrid"
                   Grid.Row="1"
-                  Grid.Column="1">
-
-            </Grid>
+                  Grid.Column="1"/>
             <Grid x:Name="SudokuGrid"
                   Grid.Row="1"
-                  Grid.Column="1">
-
-            </Grid>
+                  Grid.Column="1"/>
             <Border x:Name="SudokuBorder"
                     BorderBrush="Black"
                     BorderThickness="1.5"
@@ -93,15 +94,13 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </Border>
-            
-            
+
+
             <Label Background="Aqua"
                    Grid.Row="1"
                    Grid.Column="3"
                    VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center">
-                History
-            </Label>
+                   HorizontalContentAlignment="Center" Content="History"/>
         </Grid>
 
         <!-- LOWER CONTROL ITEMS -->
@@ -122,8 +121,7 @@
             </Grid.ColumnDefinitions>
             <Grid x:Name="NumberGrid"
                   Grid.Row="1"
-                  Grid.Column="1">
-            </Grid>
+                  Grid.Column="1"/>
 
             <ToggleButton x:Name="NoteToggle" 
                           Checked="NoteToggle_Checked"
@@ -132,9 +130,7 @@
                           Grid.Column="3"
                           VerticalContentAlignment="Center"
                           HorizontalContentAlignment="Center" 
-                          Margin="3 0">
-                Note
-            </ToggleButton>
+                          Margin="3 0" Content="Note"/>
         </Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="1070,209.2,-470,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>

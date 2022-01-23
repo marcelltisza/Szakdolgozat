@@ -10,7 +10,8 @@
         Width="700">
     
     <Grid>
-        <Frame x:Name="MainFrame"/>
+        <Frame x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
     
 </Window>

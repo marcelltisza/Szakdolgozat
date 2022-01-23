@@ -5,10 +5,46 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Sudoku.UI.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="MenuView">
+      d:DesignHeight="500" 
+      d:DesignWidth="700"
+      Title="MenuView"
+      Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="MenuButtonsPanel"
+                    Grid.Row="1"
+                    Grid.Column="1">
+            <Button Width="200"
+                    FontSize="30"
+                    Margin="0 0 0 30"
+                    Click="Button_Click">
+                New Game
+            </Button>
+            <Button Width="200"
+                    FontSize="30"
+                    Margin="0 0 0 30">
+                Continue
+            </Button>
+
+            <Button Width="200"
+                    FontSize="30"
+                    Margin="0 0 0 30">
+                Options
+            </Button>
+            <Button Width="200"
+                    FontSize="30">
+                Leaderboard
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

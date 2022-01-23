@@ -17,3 +17,7 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Windows\MainWindow.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\GameView.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\MenuView.baml
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\LeaderboardView.g.cs
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\OptionsView.g.cs
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\LeaderboardView.baml
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Views\Pages\OptionsView.baml

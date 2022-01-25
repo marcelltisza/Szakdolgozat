@@ -5,8 +5,9 @@
     "\\Application\\SudokuApp",
     "\\Application\\SudokuApp\\Sudoku.UI",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views",
-    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages"
+    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages",
+    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls"
   ],
-  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages\\GameView.xaml",
+  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls\\GridCell.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

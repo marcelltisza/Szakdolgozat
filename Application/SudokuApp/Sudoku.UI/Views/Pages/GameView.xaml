@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Sudoku.UI.Views"
+      xmlns:controls="clr-namespace:Sudoku.UI.Views.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="450" 
       d:DesignWidth="700"
@@ -45,62 +45,38 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="8*"/>
-                <!-- SUDOKU -->
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5*"/>
-                <!-- HISTORY -->
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="260"/>
             </Grid.RowDefinitions>
+            
             <Label x:Name="TimeLabel" 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Grid.ColumnSpan="5"
                    FontWeight="Bold"
                    FontSize="15"
-                   Content="{Binding PlayTime}">
-            </Label>
-            <Grid x:Name="NoteGrid"
-                  IsHitTestVisible="False"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Grid x:Name="InputGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Grid x:Name="SudokuGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Border x:Name="SudokuBorder"
-                    BorderBrush="Black"
-                    BorderThickness="1.5"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    IsHitTestVisible="False">
-                <Grid x:Name="Minigrids"
-                      Background="Transparent"
-                      IsHitTestVisible="False">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-            </Border>
+                   Content="{Binding PlayTime}"/>
+            
+            <controls:SudokuGrid Grid.Row="1"
+                                 Grid.Column="1"
+                                 SelectedNumber="{Binding ElementName=NumberSelector, Path=SelectedNumber}"
+                                 NoteMode="{Binding ElementName=NoteToggle, Path=IsChecked}"/>
 
+            <controls:SudokuBorders Grid.Column="1"
+                                    Grid.Row="1"
+                                    IsHitTestVisible="False"/>
 
             <Label Background="Aqua"
                    Grid.Row="1"
                    Grid.Column="3"
                    VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center" Content="History"/>
+                   HorizontalContentAlignment="Center" 
+                   Content="{Binding ElementName=NumberSelector, Path=SelectedNumber}"/>
         </Grid>
 
         <!-- LOWER CONTROL ITEMS -->
@@ -113,25 +89,22 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="140*"/>
                 <ColumnDefinition Width="330*"/>
-                <!-- NUMBERS -->
                 <ColumnDefinition Width="43*"/>
                 <ColumnDefinition Width="43*"/>
-                <!-- NOTE TOGGLE -->
                 <ColumnDefinition Width="140*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="NumberGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-
+            <controls:NumberSelector x:Name="NumberSelector"
+                                     Grid.Row="1"
+                                     Grid.Column="1"
+                                     NoteMode="{Binding ElementName=NoteToggle, Path=IsChecked}"/>
             <ToggleButton x:Name="NoteToggle" 
-                          Checked="NoteToggle_Checked"
-                          Unchecked="NoteToggle_Unchecked"
                           Grid.Row="1"
                           Grid.Column="3"
                           VerticalContentAlignment="Center"
                           HorizontalContentAlignment="Center" 
-                          Margin="3 0" Content="Note"/>
+                          Margin="3 0" 
+                          Content="Note"/>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="1070,209.2,-470,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Page>

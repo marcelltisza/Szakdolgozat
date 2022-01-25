@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sudoku.UI.Models
+namespace Sudoku.UI.Models.GameModels
 {
     public class SudokuBoard
     {

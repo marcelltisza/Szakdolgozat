@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Sudoku.UI.Models.GameModels;
 using System.Windows;
 
 namespace Sudoku.UI
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        private ServiceProvider serviceProvider;
+
+        public App()
+        {
+            ServiceCollection services = new ServiceCollection();
+            ConfigureServices(services);
+            serviceProvider = services.BuildServiceProvider();
+        }
+
+        private void ConfigureServices(ServiceCollection services)
+        {
+            services.AddSingleton<SudokuBoard>();
+        }
     }
 }

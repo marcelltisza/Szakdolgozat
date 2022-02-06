@@ -69,14 +69,24 @@
 
             <controls:SudokuBorders Grid.Column="1"
                                     Grid.Row="1"
-                                    IsHitTestVisible="False"/>
-
-            <Label Background="Aqua"
-                   Grid.Row="1"
-                   Grid.Column="3"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center" 
-                   Content="{Binding ElementName=NumberSelector, Path=SelectedNumber}"/>
+                                    IsHitTestVisible="False" />
+            <Border Grid.Row="1"
+                    Grid.Column="3"
+                    BorderThickness="1.5"
+                    BorderBrush="Black">
+                <StackPanel>
+                    <Label Background="LightGray"
+                           FontWeight="Bold"
+                           Padding="10 10 0 5">
+                        History
+                    </Label>
+                    <ListBox x:Name="HistoryList"
+                             Background="Aqua"
+                             Height="auto"/>
+                </StackPanel>
+            </Border>
+            
+            
         </Grid>
 
         <!-- LOWER CONTROL ITEMS -->

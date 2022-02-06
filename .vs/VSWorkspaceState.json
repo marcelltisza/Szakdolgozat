@@ -4,10 +4,12 @@
     "\\Application",
     "\\Application\\SudokuApp",
     "\\Application\\SudokuApp\\Sudoku.UI",
+    "\\Application\\SudokuApp\\Sudoku.UI\\Models",
+    "\\Application\\SudokuApp\\Sudoku.UI\\Models\\ValueConverters",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls"
   ],
-  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls\\GridCell.xaml.cs",
+  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Models\\ValueConverters\\NoteVisibilityConverter.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -3,12 +3,15 @@ using System.Windows;
 
 namespace Sudoku.UI.Models.GameModels
 {
+    public delegate void CellChangedHandler(string value);
+
     public class SudokuCell : INotifyPropertyChanged
     {
+        public event CellChangedHandler CellChanged = delegate { };
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
         private string value;
         private string notes;
-
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         public bool IsFixed { get; set; }
 
@@ -25,6 +28,7 @@ namespace Sudoku.UI.Models.GameModels
                 {
                     this.value = "";
                 }
+                CellChanged(value);
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(Value)));
             }
         }

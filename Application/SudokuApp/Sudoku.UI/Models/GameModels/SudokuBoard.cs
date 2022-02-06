@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Sudoku.UI.Models.GameModels
 {
     public class SudokuBoard
     {
+        public History History = new History();
         public SudokuCell[][] Rows { get; set; }
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
@@ -12,9 +14,19 @@ namespace Sudoku.UI.Models.GameModels
         public SudokuBoard(SudokuCell[,] cells)
         {
             Cells = cells;
+            foreach (var cell in Cells)
+            {
+                cell.CellChanged += OnCellChanged;
+            }
             SetRows();
             SetColumns();
             SetMinigrids();
+        }
+
+        private void OnCellChanged(string value)
+        {
+            History.entries.Add(value);
+            MessageBox.Show($"value changed to {value}");
         }
 
         private void SetRows()

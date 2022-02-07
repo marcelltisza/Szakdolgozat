@@ -4,9 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:controls="clr-namespace:Sudoku.UI.Views.UserControls"
+      xmlns:viewModels="clr-namespace:Sudoku.UI.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" 
       d:DesignWidth="700"
+      viewModels:ViewModelLocator.AutoWireViewModel="True"
       Title="GameView"
       Background="White">
 
@@ -31,12 +33,23 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <Button x:Name="MenuButton" Content="Menu"/>
-            <Button x:Name="UndoButton" Content="Undo" Grid.Column="1"/>
-            <Button x:Name="RedoButton" Content="Redo" Grid.Column="2"/>
-            <Button x:Name="ResetButton" Content="Reset" Grid.Column="3"/>
-            <Button x:Name="NightModeButton" Content="Night" Grid.Column="5"/>
-            <Button x:Name="HintButton" Content="Hint" Grid.Column="6"/>
+            <Button x:Name="MenuButton" 
+                    Content="Menu"/>
+            <Button x:Name="UndoButton" 
+                    Content="Undo" 
+                    Grid.Column="1"/>
+            <Button x:Name="RedoButton" 
+                    Content="Redo" 
+                    Grid.Column="2"/>
+            <Button x:Name="ResetButton" 
+                    Content="Reset" 
+                    Grid.Column="3"/>
+            <Button x:Name="NightModeButton" 
+                    Content="Night" 
+                    Grid.Column="5"/>
+            <Button x:Name="HintButton" 
+                    Content="Hint"
+                    Grid.Column="6"/>
         </Grid>
 
         <!-- PLAY AREA -->
@@ -63,9 +76,7 @@
                    Content="{Binding PlayTime}"/>
             
             <controls:SudokuGrid Grid.Row="1"
-                                 Grid.Column="1"
-                                 SelectedNumber="{Binding ElementName=NumberSelector, Path=SelectedNumber}"
-                                 NoteMode="{Binding ElementName=NoteToggle, Path=IsChecked}"/>
+                                 Grid.Column="1"/>
 
             <controls:SudokuBorders Grid.Column="1"
                                     Grid.Row="1"
@@ -85,8 +96,7 @@
                              Height="auto"/>
                 </StackPanel>
             </Border>
-            
-            
+
         </Grid>
 
         <!-- LOWER CONTROL ITEMS -->
@@ -106,12 +116,13 @@
             <controls:NumberSelector x:Name="NumberSelector"
                                      Grid.Row="1"
                                      Grid.Column="1"
-                                     NoteMode="{Binding ElementName=NoteToggle, Path=IsChecked}"/>
+                                     SelectedNumber="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=OneWayToSource}"/>
             <ToggleButton x:Name="NoteToggle" 
                           Grid.Row="1"
                           Grid.Column="3"
                           VerticalContentAlignment="Center"
                           HorizontalContentAlignment="Center" 
+                          IsChecked="{Binding NoteMode, Mode=OneWayToSource}"
                           Margin="3 0" 
                           Content="Note"/>
         </Grid>

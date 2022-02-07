@@ -1,4 +1,5 @@
-﻿using Sudoku.UI.Models.GameModels;
+﻿using Sudoku.Models;
+using Sudoku.UI.Commands;
 using System;
 using System.ComponentModel;
 using System.Windows.Threading;
@@ -7,13 +8,16 @@ namespace Sudoku.UI.ViewModels
 {
     public class GameViewModel : INotifyPropertyChanged
     {
+        #region Properties
+        public RelayCommand<SudokuCell> ClickCommand { get; set; }
+
         private DispatcherTimer _timer;
         private TimeSpan playTime;
 
-        public TimeSpan PlayTime 
-        { 
+        public TimeSpan PlayTime
+        {
             get => playTime;
-            set 
+            set
             {
                 if (playTime != value)
                 {
@@ -25,21 +29,47 @@ namespace Sudoku.UI.ViewModels
 
         public SudokuBoard Board { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string SelectedNumber { get; set; }
 
+        public bool NoteMode { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        #endregion
+
+        #region Constructor
         public GameViewModel()
         {
             Board = new SudokuBoard(GenerateTestInput());
+            ClickCommand = new RelayCommand<SudokuCell>(OnClick, CanClick);
 
             _timer = new DispatcherTimer();
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += _timer_Tick;
             _timer.Start();
         }
+        #endregion
 
+        #region Methods
         private void _timer_Tick(object sender, EventArgs e)
         {
             PlayTime = PlayTime.Add(new TimeSpan(0, 0, 1));
+        }
+
+        private bool CanClick(SudokuCell cell)
+        {
+            return true;
+        }
+
+        private void OnClick(SudokuCell cell)
+        {
+            if (NoteMode)
+            {
+                cell.SetNote(Convert.ToInt32(SelectedNumber) - 1, SelectedNumber);
+            }
+            else
+            {
+                cell.Value = SelectedNumber;
+            }
         }
 
         private SudokuCell[,] GenerateTestInput()
@@ -136,7 +166,17 @@ namespace Sudoku.UI.ViewModels
             cells[8, 7] = new SudokuCell("");
             cells[8, 8] = new SudokuCell("4", isFixed: true);
 
+            for (int i = 0; i < cells.GetLength(0); i++)
+            {
+                for (int j = 0; j < cells.GetLength(1); j++)
+                {
+                    cells[i, j].Row = i;
+                    cells[i, j].Column = j;
+                }
+            }
+
             return cells;
         }
+        #endregion
     }
 }

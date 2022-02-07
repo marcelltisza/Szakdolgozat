@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Sudoku.UI.Models.GameModels;
+using Sudoku.Models;
 using System.Windows;
 
 namespace Sudoku.UI

@@ -1,4 +1,5 @@
-﻿using Sudoku.UI.Models.GameModels;
+﻿using Sudoku.Models;
+using Sudoku.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,9 +9,11 @@ namespace Sudoku.UI.ViewModels
     {
         public SudokuBoard Board { get; set; }
 
+        private IOServices iOServices;
+
         public SudokuGridViewModel()
         {
-            Board = new SudokuBoard(GenerateTestInput()); // DELETE LATER
+            Board = new SudokuBoard(GenerateTestInput()); // DELETE LATER 
         }
 
         private SudokuCell[,] GenerateTestInput()
@@ -109,6 +112,8 @@ namespace Sudoku.UI.ViewModels
 
             return cells;
         }
+
+        // Move to a separate service class
 
         public bool CheckErrorsForCell(int row, int column)
         {

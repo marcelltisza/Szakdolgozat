@@ -1,5 +1,4 @@
-﻿using Sudoku.UI.ViewModels;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -25,7 +24,7 @@ namespace Sudoku.UI.Views.UserControls
         }
 
         public static readonly DependencyProperty SelectedNumberProperty =
-            DependencyProperty.Register("SelectedNumber", typeof(string), typeof(NumberSelector), new PropertyMetadata(null));
+            DependencyProperty.Register("SelectedNumber", typeof(string), typeof(NumberSelector), new PropertyMetadata(""));
 
         #endregion
 

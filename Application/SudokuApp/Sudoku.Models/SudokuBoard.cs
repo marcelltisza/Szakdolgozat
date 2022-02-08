@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Sudoku.Models.Events;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sudoku.Models
 {
     public class SudokuBoard
     {
-        public History History = new History();
+        public ObservableCollection<HistoryEntry> History { get; set; }
         public SudokuCell[][] Rows { get; set; }
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
@@ -14,20 +16,28 @@ namespace Sudoku.Models
         public SudokuBoard(SudokuCell[,] cells)
         {
             Cells = cells;
+            History = new ObservableCollection<HistoryEntry>();
             ListofCells = new List<SudokuCell>();
             foreach (var cell in Cells)
             {
                 ListofCells.Add(cell);
-                //cell.CellChanged += OnCellChanged;
+                cell.CellChanged += OnCellChanged;
             }
             SetRows();
             SetColumns();
             SetMinigrids();
         }
 
-        private void OnCellChanged(string value)
+        private void OnCellChanged(object sender, CellChangedEventArgs e)
         {
-            History.entries.Add(value);
+            var cell = sender as SudokuCell;
+            History.Insert(0, new HistoryEntry 
+            { 
+                Cell = cell,
+                OldValue = e.OldValue,
+                NewValue = e.NewValue,
+                Content = e.TargetContent
+            });
         }
 
         private void SetRows()

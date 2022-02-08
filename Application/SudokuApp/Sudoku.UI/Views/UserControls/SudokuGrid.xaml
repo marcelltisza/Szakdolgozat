@@ -19,7 +19,7 @@
         <converter:ToListConverter x:Key="ToListConverter" />
     </UserControl.Resources>
 
-    <ItemsControl ItemsSource="{Binding Board.Cells, Converter={StaticResource ToListConverter}}">
+    <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.Board.Cells, Converter={StaticResource ToListConverter}}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <Border BorderThickness="0"

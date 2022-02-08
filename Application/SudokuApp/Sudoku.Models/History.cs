@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 
 namespace Sudoku.Models
 {
     public class History
     {
-        public List<string> entries = new List<string>();
+        public ObservableCollection<HistoryEntry> Entries { get; set; }
+
+        public History()
+        {
+            Entries = new ObservableCollection<HistoryEntry>();
+        }
     }
 }

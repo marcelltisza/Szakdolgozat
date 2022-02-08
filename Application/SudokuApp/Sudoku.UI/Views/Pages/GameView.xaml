@@ -38,12 +38,9 @@
             <Button x:Name="UndoButton" 
                     Content="Undo" 
                     Grid.Column="1"/>
-            <Button x:Name="RedoButton" 
-                    Content="Redo" 
-                    Grid.Column="2"/>
             <Button x:Name="ResetButton" 
                     Content="Reset" 
-                    Grid.Column="3"/>
+                    Grid.Column="2"/>
             <Button x:Name="NightModeButton" 
                     Content="Night" 
                     Grid.Column="5"/>
@@ -85,15 +82,36 @@
                     Grid.Column="3"
                     BorderThickness="1.5"
                     BorderBrush="Black">
-                <StackPanel>
+                <StackPanel x:Name="HistoryPanel">
                     <Label Background="LightGray"
                            FontWeight="Bold"
                            Padding="10 10 0 5">
                         History
                     </Label>
-                    <ListBox x:Name="HistoryList"
-                             Background="Aqua"
-                             Height="auto"/>
+                    <ListView x:Name="HistoryList"
+                              ItemsSource="{Binding History}"
+                              Padding="0"
+                              Margin="0 0 2 0"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="DarkGray"
+                                            BorderThickness="1"
+                                            Margin="-4 -1.8">
+                                    <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=HistoryPanel, Path=ActualWidth}"
+                                               ScrollViewer.CanContentScroll="False">
+                                        <Image Source="{Binding ImageSource}" Width="20" Height="20"/>
+                                        <TextBlock Text="{Binding Description}"
+                                                   TextWrapping="Wrap" 
+                                                   VerticalAlignment="Center"
+                                                   FontStyle="Italic"
+                                                   Margin="4"/>
+                                    </WrapPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
                 </StackPanel>
             </Border>
 

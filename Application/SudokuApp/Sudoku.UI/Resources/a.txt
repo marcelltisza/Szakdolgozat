@@ -1,4 +1,0 @@
-﻿value inserted at cell (x,y) [You made a mistake]
-value deleted from cell (x,y) [You made a mistake]
-note inserted at cell (x,y)
-note deleted from cell (x,y)

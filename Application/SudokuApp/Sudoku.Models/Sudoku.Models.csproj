@@ -41,12 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerations\TargetContentType.cs" />
+    <Compile Include="Events\CellChangedEventArgs.cs" />
+    <Compile Include="Enumerations\ActionType.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="History.cs" />
     <Compile Include="HistoryEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SudokuBoard.cs" />
     <Compile Include="SudokuCell.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Sudoku.Models;
 using Sudoku.UI.Commands;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Threading;
 
@@ -10,6 +11,8 @@ namespace Sudoku.UI.ViewModels
     {
         #region Properties
         public RelayCommand<SudokuCell> ClickCommand { get; set; }
+
+        public ObservableCollection<HistoryEntry> History { get; set; }
 
         private DispatcherTimer _timer;
         private TimeSpan playTime;
@@ -41,6 +44,8 @@ namespace Sudoku.UI.ViewModels
         {
             Board = new SudokuBoard(GenerateTestInput());
             ClickCommand = new RelayCommand<SudokuCell>(OnClick, CanClick);
+
+            History = Board.History;
 
             _timer = new DispatcherTimer();
             _timer.Interval = new TimeSpan(0, 0, 1);

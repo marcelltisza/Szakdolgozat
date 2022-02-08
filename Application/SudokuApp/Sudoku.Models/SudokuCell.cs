@@ -1,12 +1,14 @@
-﻿using System.ComponentModel;
+﻿using Sudoku.Models.Enumerations;
+using Sudoku.Models.Events;
+using System;
+using System.ComponentModel;
 
 namespace Sudoku.Models
 {
-    public delegate void CellChangedHandler(string value);
 
     public class SudokuCell : INotifyPropertyChanged
     {
-        public event CellChangedHandler CellChanged = delegate { };
+        public event EventHandler<CellChangedEventArgs> CellChanged = delegate { };
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         private string value;
@@ -21,6 +23,7 @@ namespace Sudoku.Models
             get => value;
             set
             {
+                var oldValue = this.value;
                 if (this.value != value)
                 {
                     this.value = value;
@@ -29,7 +32,12 @@ namespace Sudoku.Models
                 {
                     this.value = "";
                 }
-                CellChanged(value);
+                CellChanged(this, new CellChangedEventArgs
+                {
+                    OldValue = oldValue,
+                    NewValue = this.value,
+                    TargetContent = TargetContentType.CellValue
+                });
                 PropertyChanged(this, new PropertyChangedEventArgs(nameof(Value)));
             }
         }
@@ -56,6 +64,7 @@ namespace Sudoku.Models
         public void SetNote(int index, string value)
         {
             string newNotes = "";
+            string oldValue = Notes[index].ToString();
             for (int i = 0; i < Notes.Length; i++)
             {
                 if (i == index)
@@ -71,6 +80,12 @@ namespace Sudoku.Models
                 }
             }
             Notes = newNotes;
+            CellChanged(this, new CellChangedEventArgs
+            {
+                OldValue = oldValue,
+                NewValue = Notes[index].ToString(),
+                TargetContent = TargetContentType.Note
+            });
         }
     }
 }

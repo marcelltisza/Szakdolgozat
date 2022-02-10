@@ -31,13 +31,16 @@ namespace Sudoku.Models
         private void OnCellChanged(object sender, CellChangedEventArgs e)
         {
             var cell = sender as SudokuCell;
-            History.Insert(0, new HistoryEntry 
-            { 
-                Cell = cell,
-                OldValue = e.OldValue,
-                NewValue = e.NewValue,
-                Content = e.TargetContent
-            });
+            if (e.NewValue != e.OldValue)
+            {
+                History.Insert(0, new HistoryEntry
+                {
+                    Cell = cell,
+                    OldValue = e.OldValue,
+                    NewValue = e.NewValue,
+                    Content = e.TargetContent
+                });
+            }
         }
 
         private void SetRows()

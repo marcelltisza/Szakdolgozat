@@ -32,13 +32,13 @@ namespace Sudoku.Models
                 {
                     this.value = "";
                 }
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Value)));
                 CellChanged(this, new CellChangedEventArgs
                 {
                     OldValue = oldValue,
                     NewValue = this.value,
                     TargetContent = TargetContentType.CellValue
                 });
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(Value)));
             }
         }
         public string Notes //e.g.: 100111001

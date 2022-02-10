@@ -78,7 +78,18 @@ namespace Sudoku.Models
 
         public void Undo()
         {
-
+            switch (Content)
+            {
+                case TargetContentType.CellValue:
+                    Cell.Value = OldValue;
+                    break;
+                case TargetContentType.Note:
+                    if (OldValue == "")
+                        Cell.SetNote(Convert.ToInt32(NewValue) - 1, "0");
+                    else
+                        Cell.SetNote(Convert.ToInt32(OldValue) - 1, OldValue);
+                    break;
+            }
         }
     }
 }

@@ -48,3 +48,4 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.exe
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.csproj.CopyComplete

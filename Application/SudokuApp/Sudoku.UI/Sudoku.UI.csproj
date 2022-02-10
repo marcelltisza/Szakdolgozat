@@ -73,6 +73,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="ValueConverters\BooleanInverter.cs" />
+    <Compile Include="ValueConverters\CountToBoolConverter.cs" />
     <Compile Include="ValueConverters\FixedBackgroundConverter.cs" />
     <Compile Include="ValueConverters\FontWeightConverter.cs" />
     <Compile Include="ValueConverters\NoteConverter.cs" />

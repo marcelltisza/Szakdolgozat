@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:controls="clr-namespace:Sudoku.UI.Views.UserControls"
+      xmlns:converters="clr-namespace:Sudoku.UI.ValueConverters"
       xmlns:viewModels="clr-namespace:Sudoku.UI.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" 
@@ -12,6 +13,10 @@
       Title="GameView"
       Background="White">
 
+    <Page.Resources>
+        <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
+    </Page.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -37,7 +42,9 @@
                     Content="Menu"/>
             <Button x:Name="UndoButton" 
                     Content="Undo" 
-                    Grid.Column="1"/>
+                    Grid.Column="1"
+                    IsEnabled="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
+                    Command="{Binding UndoCommand}"/>
             <Button x:Name="ResetButton" 
                     Content="Reset" 
                     Grid.Column="2"/>
@@ -92,7 +99,17 @@
                               ItemsSource="{Binding History}"
                               Padding="0"
                               Margin="0 0 2 0"
-                              >
+                              SelectedItem="{Binding SelectedHistoryEntry}">
+                        <ListView.Resources>
+                            <ContextMenu x:Key="ItemContextMenu">
+                                <MenuItem Header="Delete all" Command="{Binding Path=DataContext.UndoPreceedingCommand, RelativeSource={RelativeSource AncestorType=Page}}" Background="WhiteSmoke" />
+                            </ContextMenu>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" >
+                                <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="DarkGray"

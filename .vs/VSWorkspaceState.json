@@ -8,6 +8,6 @@
     "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls"
   ],
-  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages\\GameView.xaml",
+  "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls\\SudokuGrid.xaml",
   "PreviewInSolutionExplorer": false
 }

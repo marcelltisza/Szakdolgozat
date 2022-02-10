@@ -3,6 +3,7 @@ using Sudoku.UI.Commands;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Threading;
 
 namespace Sudoku.UI.ViewModels
@@ -11,12 +12,13 @@ namespace Sudoku.UI.ViewModels
     {
         #region Properties
         public RelayCommand<SudokuCell> ClickCommand { get; set; }
+        public RelayCommand UndoCommand { get; set; }
+        public RelayCommand UndoPreceedingCommand { get; set; }
 
+        public HistoryEntry SelectedHistoryEntry { get; set; }
         public ObservableCollection<HistoryEntry> History { get; set; }
-
         private DispatcherTimer _timer;
         private TimeSpan playTime;
-
         public TimeSpan PlayTime
         {
             get => playTime;
@@ -29,11 +31,8 @@ namespace Sudoku.UI.ViewModels
                 }
             }
         }
-
         public SudokuBoard Board { get; set; }
-
         public string SelectedNumber { get; set; }
-
         public bool NoteMode { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
@@ -43,7 +42,9 @@ namespace Sudoku.UI.ViewModels
         public GameViewModel()
         {
             Board = new SudokuBoard(GenerateTestInput());
-            ClickCommand = new RelayCommand<SudokuCell>(OnClick, CanClick);
+            ClickCommand = new RelayCommand<SudokuCell>(OnClick);
+            UndoCommand = new RelayCommand(OnUndo);
+            UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
 
             History = Board.History;
 
@@ -60,9 +61,32 @@ namespace Sudoku.UI.ViewModels
             PlayTime = PlayTime.Add(new TimeSpan(0, 0, 1));
         }
 
-        private bool CanClick(SudokuCell cell)
+        private void OnUndo()
         {
-            return true;
+            if (SelectedHistoryEntry == null)
+            {
+                var firstEntry = History.FirstOrDefault();
+                firstEntry.Undo();
+                History.Remove(firstEntry);
+            }
+            else
+            {
+                SelectedHistoryEntry.Undo();
+                History.Remove(SelectedHistoryEntry);
+            }
+            History.Remove(History.First());
+        }
+
+        private void OnUndoPreceeding()
+        {
+            int maxIndex = History.IndexOf(SelectedHistoryEntry);
+
+            for (int i = 0; i <= maxIndex; i++)
+            {
+                History.First().Undo();
+                History.Remove(History.First());
+                History.Remove(History.First());
+            }
         }
 
         private void OnClick(SudokuCell cell)

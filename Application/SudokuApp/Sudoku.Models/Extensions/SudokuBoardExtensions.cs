@@ -1,30 +1,49 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Models.GameModels;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sudoku.Services
+namespace Sudoku.Models.Extensions
 {
-    public class SudokuRuleChecker
+    public static class SudokuBoardExtensions
     {
-        public SudokuBoard Board { get; set; }
-        // Make it an extension method over the SudokuBoard class
-        public SudokuRuleChecker()
+        public static bool CheckErrorsForCell(this SudokuBoard board, int row, int column)
         {
-
-        }
-
-        public bool CheckErrorsForCell(int row, int column)
-        {
-            var rowResult = RowErrorFound(row);
-            var columnResult = ColumnErrorFound(column);
-            var mingridResult = MingridErrorFound(row, column);
+            var rowResult = RowErrorFound(board, row);
+            var columnResult = ColumnErrorFound(board, column);
+            var mingridResult = MingridErrorFound(board, row, column);
             var result = rowResult && columnResult && mingridResult;
             return result;
         }
 
-        private bool RowErrorFound(int row)
+        public static bool IsFull(this SudokuBoard board)
         {
-            var NotEmptyCells = Board.Rows[row].Where(cell => cell.Value != "").Select(cell => cell.Value);
+            for (int i = 0; i < board.Cells.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.Cells.GetLength(1); j++)
+                {
+                    if (string.IsNullOrEmpty(board.Cells[i, j].Value))
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool IsSolved(this SudokuBoard board)
+        {
+            for (int i = 0; i < board.Cells.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.Cells.GetLength(1); j++)
+                {
+                    if (board.CheckErrorsForCell(i, j) == false)
+                        return false;
+                }
+            }
+            return true;
+        }
+
+        private static bool RowErrorFound(SudokuBoard board, int row)
+        {
+            var NotEmptyCells = board.Rows[row].Where(cell => cell.Value != "").Select(cell => cell.Value);
             var distinctItems = NotEmptyCells.Distinct().Count();
             int allItems = NotEmptyCells.Count();
 
@@ -35,9 +54,9 @@ namespace Sudoku.Services
             return true;
         }
 
-        private bool ColumnErrorFound(int column)
+        private static bool ColumnErrorFound(SudokuBoard board, int column)
         {
-            var NotEmptyCells = Board.Columns[column].Where(cell => cell.Value != "").Select(cell => cell.Value);
+            var NotEmptyCells = board.Columns[column].Where(cell => cell.Value != "").Select(cell => cell.Value);
             var distinctItems = NotEmptyCells.Distinct().Count();
             int allItems = NotEmptyCells.Count();
 
@@ -48,7 +67,7 @@ namespace Sudoku.Services
             return true;
         }
 
-        private bool MingridErrorFound(int row, int column)
+        private static bool MingridErrorFound(SudokuBoard board, int row, int column)
         {
             var options = new List<int>();
             switch (row)
@@ -89,7 +108,7 @@ namespace Sudoku.Services
                     break;
             }
 
-            var NotEmptyCells = Board.Minigrids[options.First()].Where(cell => cell.Value != "").Select(cell => cell.Value);
+            var NotEmptyCells = board.Minigrids[options.First()].Where(cell => cell.Value != "").Select(cell => cell.Value);
             var distinctItems = NotEmptyCells.Distinct().Count();
             var distinct = NotEmptyCells.Distinct();
             int allItems = NotEmptyCells.Count();

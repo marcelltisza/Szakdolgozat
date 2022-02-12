@@ -3,9 +3,8 @@ using Sudoku.Models.Events;
 using System;
 using System.ComponentModel;
 
-namespace Sudoku.Models
+namespace Sudoku.Models.GameModels
 {
-
     public class SudokuCell : INotifyPropertyChanged
     {
         public event EventHandler<CellChangedEventArgs> CellChanged = delegate { };

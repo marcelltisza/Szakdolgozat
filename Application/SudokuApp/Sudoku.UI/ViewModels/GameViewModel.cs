@@ -1,4 +1,5 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Models.Extensions;
+using Sudoku.Models.GameModels;
 using Sudoku.UI.Commands;
 using System;
 using System.Collections.ObjectModel;
@@ -19,6 +20,9 @@ namespace Sudoku.UI.ViewModels
         public ObservableCollection<HistoryEntry> History { get; set; }
         private DispatcherTimer _timer;
         private TimeSpan playTime;
+        private bool isGameOver;
+        private bool noteMode;
+
         public TimeSpan PlayTime
         {
             get => playTime;
@@ -33,7 +37,32 @@ namespace Sudoku.UI.ViewModels
         }
         public SudokuBoard Board { get; set; }
         public string SelectedNumber { get; set; }
-        public bool NoteMode { get; set; }
+        public bool NoteMode 
+        { 
+            get => noteMode;
+            set
+            {
+                if (value != noteMode)
+                {
+                    noteMode = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(NoteMode)));
+                }
+
+            }
+        }
+        public bool IsGameOver
+        {
+            get => isGameOver;
+            set
+            {
+                if (value != isGameOver)
+                {
+                    isGameOver = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsGameOver)));
+                }
+
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         #endregion
@@ -99,6 +128,15 @@ namespace Sudoku.UI.ViewModels
             {
                 cell.Value = SelectedNumber;
             }
+
+            if (Board.IsFull())
+            {
+                IsGameOver = true;
+            }
+            else
+            {
+                IsGameOver = false;
+            }
         }
 
         private SudokuCell[,] GenerateTestInput()
@@ -106,19 +144,19 @@ namespace Sudoku.UI.ViewModels
             SudokuCell[,] cells = new SudokuCell[9, 9];
 
             cells[0, 0] = new SudokuCell("8", isFixed: true);
-            cells[0, 1] = new SudokuCell("", "123000000");
+            cells[0, 1] = new SudokuCell("", "000000000");
             cells[0, 2] = new SudokuCell("");
             cells[0, 3] = new SudokuCell("4", isFixed: true);
             cells[0, 4] = new SudokuCell("");
-            cells[0, 5] = new SudokuCell("", "020056009");
+            cells[0, 5] = new SudokuCell("", "000000000");
             cells[0, 6] = new SudokuCell("");
             cells[0, 7] = new SudokuCell("");
             cells[0, 8] = new SudokuCell("9", isFixed: true);
 
-            cells[1, 0] = new SudokuCell("", "120000009");
+            cells[1, 0] = new SudokuCell("", "000000000");
             cells[1, 1] = new SudokuCell("");
             cells[1, 2] = new SudokuCell("");
-            cells[1, 3] = new SudokuCell("", "020056009");
+            cells[1, 3] = new SudokuCell("", "000000000");
             cells[1, 4] = new SudokuCell("");
             cells[1, 5] = new SudokuCell("6", isFixed: true);
             cells[1, 6] = new SudokuCell("2", isFixed: true);
@@ -133,7 +171,7 @@ namespace Sudoku.UI.ViewModels
             cells[2, 5] = new SudokuCell("");
             cells[2, 6] = new SudokuCell("8", isFixed: true);
             cells[2, 7] = new SudokuCell("4", isFixed: true);
-            cells[2, 8] = new SudokuCell("", "000000789");
+            cells[2, 8] = new SudokuCell("", "000000000");
 
             cells[3, 0] = new SudokuCell("");
             cells[3, 1] = new SudokuCell("8", isFixed: true);

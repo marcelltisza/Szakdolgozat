@@ -10,13 +10,15 @@
       d:DesignHeight="450" 
       d:DesignWidth="700"
       viewModels:ViewModelLocator.AutoWireViewModel="True"
-      Title="GameView"
-      Background="White">
+      Title="GameView">
 
     <Page.Resources>
         <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
     </Page.Resources>
-    
+    <Page.Background>
+        <ImageBrush ImageSource="../../Resources/Images/game_background.jpg"/>
+    </Page.Background>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,6 +33,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -38,22 +41,29 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <Button x:Name="MenuButton" 
-                    Content="Menu"/>
-            <Button x:Name="UndoButton" 
-                    Content="Undo" 
-                    Grid.Column="1"
-                    IsEnabled="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
-                    Command="{Binding UndoCommand}"/>
-            <Button x:Name="ResetButton" 
-                    Content="Reset" 
-                    Grid.Column="2"/>
-            <Button x:Name="NightModeButton" 
-                    Content="Night" 
-                    Grid.Column="5"/>
+            <Button x:Name="MenuButton"
+                    Margin="4"
+                    BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Resources/Images/game_back.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="SettingsButton" 
+                    BorderThickness="0"
+                    Margin="4"
+                    Grid.Column="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Resources/Images/game_settings.png"/>
+                </Button.Background>
+            </Button>
             <Button x:Name="HintButton" 
-                    Content="Hint"
-                    Grid.Column="6"/>
+                    BorderThickness="0"
+                    Margin="5"
+                    Grid.Column="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="..\..\Resources\Images\game_hint.png"/>
+                </Button.Background>
+            </Button>
         </Grid>
 
         <!-- PLAY AREA -->
@@ -89,16 +99,54 @@
                     Grid.Column="3"
                     BorderThickness="1.5"
                     BorderBrush="Black">
-                <StackPanel x:Name="HistoryPanel">
-                    <Label Background="LightGray"
-                           FontWeight="Bold"
-                           Padding="10 10 0 5">
-                        History
-                    </Label>
+                <StackPanel x:Name="HistoryPanel"
+                            Background="White">
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.ColumnSpan="2"
+                               FontWeight="Bold"
+                               Padding="10 10 0 5">
+                            History
+                        </Label>
+                        <Button x:Name="ResetButton" 
+                                BorderThickness="0"
+                                Grid.Column="2"
+                                Margin="6">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/game_reset.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="UndoButton" 
+                                Grid.Column="3"
+                                BorderThickness="0"
+                                Margin="6"
+                                IsEnabled="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
+                                Command="{Binding UndoCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/history_undo.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="RedoButton" 
+                                Margin="6"
+                                Grid.Column="4"
+                                BorderThickness="0">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/history_redo.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                    
                     <ListView x:Name="HistoryList"
                               ItemsSource="{Binding History}"
                               Padding="0"
                               Margin="0 0 2 0"
+                              
                               SelectedItem="{Binding SelectedHistoryEntry}">
                         <ListView.Resources>
                             <ContextMenu x:Key="ItemContextMenu">
@@ -151,7 +199,8 @@
             <controls:NumberSelector x:Name="NumberSelector"
                                      Grid.Row="1"
                                      Grid.Column="1"
-                                     SelectedNumber="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=OneWayToSource}"/>
+                                     SelectedNumber="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=OneWayToSource}"
+                                     NoteMode="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=TwoWay}"/>
             <ToggleButton x:Name="NoteToggle" 
                           Grid.Row="1"
                           Grid.Column="3"

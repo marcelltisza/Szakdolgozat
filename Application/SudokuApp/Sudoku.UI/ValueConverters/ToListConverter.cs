@@ -1,4 +1,4 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Models.GameModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

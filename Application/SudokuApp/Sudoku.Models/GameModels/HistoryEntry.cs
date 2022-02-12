@@ -1,7 +1,7 @@
 ﻿using Sudoku.Models.Enumerations;
 using System;
 
-namespace Sudoku.Models
+namespace Sudoku.Models.GameModels
 {
     public class HistoryEntry
     {

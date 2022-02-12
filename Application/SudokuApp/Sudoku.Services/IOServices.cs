@@ -1,4 +1,4 @@
-﻿using Sudoku.Models;
+﻿using Sudoku.Models.GameModels;
 
 namespace Sudoku.Services
 {

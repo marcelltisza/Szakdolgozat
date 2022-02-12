@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Sudoku.Models
+namespace Sudoku.Models.GameModels
 {
     public class SudokuBoard
     {
@@ -11,16 +11,13 @@ namespace Sudoku.Models
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
         public SudokuCell[,] Cells { get; set; }
-        public List<SudokuCell> ListofCells { get; set; }
 
         public SudokuBoard(SudokuCell[,] cells)
         {
             Cells = cells;
             History = new ObservableCollection<HistoryEntry>();
-            ListofCells = new List<SudokuCell>();
             foreach (var cell in Cells)
             {
-                ListofCells.Add(cell);
                 cell.CellChanged += OnCellChanged;
             }
             SetRows();

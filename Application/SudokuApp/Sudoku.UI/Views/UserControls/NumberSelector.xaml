@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" 
              d:DesignWidth="700"
-             Background="White">
+             Background="Transparent">
 
     <UserControl.Resources>
-        <converter:NoteVisibilityConverter x:Key="NoteVisibilityConverter"/>
+        <converter:NoteModeBackgroundConverter x:Key="NoteModeBackgroundConverter"/>
     </UserControl.Resources>
     
     <Grid x:Name="NumbersGrid">
@@ -28,56 +28,65 @@
         
         <ToggleButton Content="1"
                       Grid.Column="0"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="2"
                       Grid.Column="1"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="3"
                       Grid.Column="2"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="4"
                       Grid.Column="3"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="5"
                       Grid.Column="4"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="6"
                       Grid.Column="5"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="7"
                       Grid.Column="6"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="8"
                       Grid.Column="7"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="9"
                       Grid.Column="8"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteVisibilityConverter}}"
+                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
+                      FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
     </Grid>

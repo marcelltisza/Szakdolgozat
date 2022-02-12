@@ -24,70 +24,87 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
         <ToggleButton Content="1"
                       Grid.Column="0"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="2"
                       Grid.Column="1"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="3"
                       Grid.Column="2"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="4"
                       Grid.Column="3"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="5"
                       Grid.Column="4"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="6"
                       Grid.Column="5"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="7"
                       Grid.Column="6"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="8"
                       Grid.Column="7"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
         
         <ToggleButton Content="9"
                       Grid.Column="8"
-                      Background="{Binding NoteMode, Converter={StaticResource NoteModeBackgroundConverter}}"
+                      Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click"/>
+
+        <Label Grid.Column="10"
+               Margin="5"
+               Background="{Binding ElementName=NoteToggle, Path=IsChecked, Converter={StaticResource NoteModeBackgroundConverter}}"/>
+        <ToggleButton x:Name="NoteToggle" 
+                      Grid.Row="1"
+                      Grid.Column="10"
+                      Margin="5"
+                      VerticalContentAlignment="Center"
+                      HorizontalContentAlignment="Center" 
+                      IsChecked="{Binding NoteMode}">
+            <ToggleButton.Background>
+                <ImageBrush ImageSource="..\..\Resources\Images\game_note.png"/>
+            </ToggleButton.Background>
+        </ToggleButton>
         
     </Grid>
     

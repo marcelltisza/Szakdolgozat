@@ -40,9 +40,10 @@ namespace Sudoku.UI.Views.UserControls
             var toggleButton = sender as ToggleButton;
             SelectedNumber = toggleButton.Content.ToString();
 
-            foreach (ToggleButton button in NumbersGrid.Children)
+            for (int i = 0; i < 9; i++)
             {
-                if (button.Content.ToString() != SelectedNumber)
+                var button = NumbersGrid.Children[i] as ToggleButton;
+                if (button.Content.ToString() != SelectedNumber && button.Name != "NoteToggle")
                 {
                     button.IsChecked = false;
                 }

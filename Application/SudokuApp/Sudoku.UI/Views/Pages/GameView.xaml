@@ -192,23 +192,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="140*"/>
                 <ColumnDefinition Width="330*"/>
-                <ColumnDefinition Width="43*"/>
-                <ColumnDefinition Width="43*"/>
                 <ColumnDefinition Width="140*"/>
             </Grid.ColumnDefinitions>
             <controls:NumberSelector x:Name="NumberSelector"
                                      Grid.Row="1"
                                      Grid.Column="1"
                                      SelectedNumber="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=OneWayToSource}"
-                                     NoteMode="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=TwoWay}"/>
-            <ToggleButton x:Name="NoteToggle" 
-                          Grid.Row="1"
-                          Grid.Column="3"
-                          VerticalContentAlignment="Center"
-                          HorizontalContentAlignment="Center" 
-                          IsChecked="{Binding NoteMode, Mode=OneWayToSource}"
-                          Margin="3 0" 
-                          Content="Note"/>
+                                     NoteMode="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.NoteMode, Mode=OneWayToSource}"/>
         </Grid>
 
     </Grid>

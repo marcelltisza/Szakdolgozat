@@ -8,11 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_settings.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_back.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_background.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_hint.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_note.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_reset.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/game_settings.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/history_redo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/history_undo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/history_delete.png")]

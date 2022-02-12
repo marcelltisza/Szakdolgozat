@@ -12,7 +12,7 @@ namespace Sudoku.UI.ValueConverters
             bool noteMode = (bool)value;
             if (noteMode)
             {
-                return Brushes.LightYellow;
+                return new SolidColorBrush(Color.FromRgb(252, 249, 139));
             }
             return Brushes.WhiteSmoke;
         }

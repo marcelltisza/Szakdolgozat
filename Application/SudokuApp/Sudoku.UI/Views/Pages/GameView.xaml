@@ -3,12 +3,22 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Sudoku.UI.Views"
+      xmlns:controls="clr-namespace:Sudoku.UI.Views.UserControls"
+      xmlns:converters="clr-namespace:Sudoku.UI.ValueConverters"
+      xmlns:viewModels="clr-namespace:Sudoku.UI.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" 
       d:DesignWidth="700"
-      Title="GameView"
-      Background="White">
+      viewModels:ViewModelLocator.AutoWireViewModel="True"
+      Title="GameView">
+
+    <Page.Resources>
+        <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
+        <converters:ParentWidthConverter x:Key="ParentWidthConverter"/>
+    </Page.Resources>
+    <Page.Background>
+        <ImageBrush ImageSource="../../Resources/Images/game_background.jpg"/>
+    </Page.Background>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -24,6 +34,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="10*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -31,12 +42,29 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <Button x:Name="MenuButton" Content="Menu"/>
-            <Button x:Name="UndoButton" Content="Undo" Grid.Column="1"/>
-            <Button x:Name="RedoButton" Content="Redo" Grid.Column="2"/>
-            <Button x:Name="ResetButton" Content="Reset" Grid.Column="3"/>
-            <Button x:Name="NightModeButton" Content="Night" Grid.Column="5"/>
-            <Button x:Name="HintButton" Content="Hint" Grid.Column="6"/>
+            <Button x:Name="MenuButton"
+                    Margin="4"
+                    BorderThickness="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Resources/Images/game_back.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="SettingsButton" 
+                    BorderThickness="0"
+                    Margin="4"
+                    Grid.Column="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Resources/Images/game_settings.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="HintButton" 
+                    BorderThickness="0"
+                    Margin="5"
+                    Grid.Column="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="..\..\Resources\Images\game_hint.png"/>
+                </Button.Background>
+            </Button>
         </Grid>
 
         <!-- PLAY AREA -->
@@ -45,93 +73,135 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="8*"/>
-                <!-- SUDOKU -->
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5*"/>
-                <!-- HISTORY -->
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="260"/>
             </Grid.RowDefinitions>
+            
             <Label x:Name="TimeLabel" 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Grid.ColumnSpan="5"
                    FontWeight="Bold"
                    FontSize="15"
-                   Content="{Binding PlayTime}">
-            </Label>
-            <Grid x:Name="NoteGrid"
-                  IsHitTestVisible="False"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Grid x:Name="InputGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Grid x:Name="SudokuGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-            <Border x:Name="SudokuBorder"
-                    BorderBrush="Black"
+                   Content="{Binding PlayTime}"/>
+            
+            <controls:SudokuGrid Grid.Row="1"
+                                 Grid.Column="1"/>
+
+            <controls:SudokuBorders Grid.Column="1"
+                                    Grid.Row="1"
+                                    IsHitTestVisible="False" />
+            <Border Grid.Row="1"
+                    Grid.Column="3"
                     BorderThickness="1.5"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    IsHitTestVisible="False">
-                <Grid x:Name="Minigrids"
-                      Background="Transparent"
-                      IsHitTestVisible="False">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
+                    BorderBrush="Black">
+                <DockPanel x:Name="HistoryPanel"
+                            Background="White">
+                    <Grid Background="LightGray" DockPanel.Dock="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.ColumnSpan="2"
+                               FontWeight="Bold"
+                               Padding="10 10 0 5">
+                            History
+                        </Label>
+                        <Button x:Name="ResetButton" 
+                                IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
+                                BorderThickness="0"
+                                Grid.Column="2"
+                                Margin="6"
+                                Command="{Binding ResetCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/game_reset.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="UndoButton" 
+                                IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
+                                Grid.Column="3"
+                                BorderThickness="0"
+                                Margin="7"
+                                Command="{Binding UndoCommand}">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/history_undo.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="RedoButton" 
+                                Margin="7"
+                                Grid.Column="4"
+                                BorderThickness="0">
+                            <Button.Background>
+                                <ImageBrush ImageSource="../../Resources/Images/history_redo.png"/>
+                            </Button.Background>
+                        </Button>
+                    </Grid>
+                    <ListView x:Name="HistoryList"
+                              ItemsSource="{Binding History}"
+                              Padding="0"
+                              Margin="0 0 2 0"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                              SelectedItem="{Binding SelectedHistoryEntry}">
+                        <ListView.Resources>
+                            <ContextMenu x:Key="ItemContextMenu">
+                                <MenuItem Header="Delete all" Command="{Binding Path=DataContext.UndoPreceedingCommand, RelativeSource={RelativeSource AncestorType=Page}}" Background="WhiteSmoke" />
+                            </ContextMenu>
+                        </ListView.Resources>
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}" >
+                                <Setter Property="ContextMenu" Value="{StaticResource ItemContextMenu}" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="DarkGray"
+                                            BorderThickness="1"
+                                            Margin="-4 -1.8">
+                                    <StackPanel Orientation="Horizontal" 
+                                                Width="{Binding ElementName=HistoryPanel, Path=ActualWidth, Converter={StaticResource ParentWidthConverter}}">
+                                        <Image Source="{Binding ImageSource}" Width="20" Height="20"/>
+                                        <TextBlock Text="{Binding Description}"
+                                                   TextWrapping="Wrap" 
+                                                   VerticalAlignment="Center"
+                                                   FontStyle="Italic"
+                                                   Margin="4"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DockPanel>
             </Border>
 
-
-            <Label Background="Aqua"
-                   Grid.Row="1"
-                   Grid.Column="3"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Center" Content="History"/>
         </Grid>
 
         <!-- LOWER CONTROL ITEMS -->
         <Grid Grid.Row="2" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="140*"/>
                 <ColumnDefinition Width="330*"/>
-                <!-- NUMBERS -->
-                <ColumnDefinition Width="43*"/>
-                <ColumnDefinition Width="43*"/>
-                <!-- NOTE TOGGLE -->
                 <ColumnDefinition Width="140*"/>
             </Grid.ColumnDefinitions>
-            <Grid x:Name="NumberGrid"
-                  Grid.Row="1"
-                  Grid.Column="1"/>
-
-            <ToggleButton x:Name="NoteToggle" 
-                          Checked="NoteToggle_Checked"
-                          Unchecked="NoteToggle_Unchecked"
-                          Grid.Row="1"
-                          Grid.Column="3"
-                          VerticalContentAlignment="Center"
-                          HorizontalContentAlignment="Center" 
-                          Margin="3 0" Content="Note"/>
+            <controls:NumberSelector x:Name="NumberSelector"
+                                     Grid.Row="1"
+                                     Grid.Column="1"
+                                     SelectedNumber="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.SelectedNumber, Mode=OneWayToSource}"
+                                     NoteMode="{Binding RelativeSource={RelativeSource AncestorType=Page}, Path=DataContext.NoteMode, Mode=OneWayToSource}"/>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="1070,209.2,-470,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+
     </Grid>
 </Page>

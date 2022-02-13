@@ -45,9 +45,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sudoku.UI\Sudoku.UI.csproj">
-      <Project>{828E961D-C6AD-4607-9124-108D7C759069}</Project>
-      <Name>Sudoku.UI</Name>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sudoku.Models\Sudoku.Models.csproj">
+      <Project>{e03c38ab-f7f4-4d6c-bb97-6840c88ab06c}</Project>
+      <Name>Sudoku.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

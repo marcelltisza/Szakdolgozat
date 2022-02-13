@@ -1,0 +1,10 @@
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\bin\Debug\Sudoku.Services.dll.config
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\bin\Debug\Sudoku.Services.dll
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\bin\Debug\Sudoku.Services.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\bin\Debug\Sudoku.Models.dll
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\bin\Debug\Sudoku.Models.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\Sudoku.Services.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\Sudoku.Services.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\Sudoku.Services.csproj.CopyComplete
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\Sudoku.Services.dll
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\Sudoku.Services.pdb

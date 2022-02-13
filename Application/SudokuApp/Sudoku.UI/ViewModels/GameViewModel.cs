@@ -1,6 +1,8 @@
-﻿using Sudoku.UI.Models;
+﻿using Sudoku.Models.Extensions;
+using Sudoku.Models.GameModels;
+using Sudoku.UI.Commands;
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Threading;
@@ -9,11 +11,23 @@ namespace Sudoku.UI.ViewModels
 {
     public class GameViewModel : INotifyPropertyChanged
     {
-        public SudokuBoard Board { get; set; }
-        public TimeSpan PlayTime 
-        { 
+        #region Properties
+        public RelayCommand<SudokuCell> ClickCommand { get; set; }
+        public RelayCommand UndoCommand { get; set; }
+        public RelayCommand ResetCommand { get; set; }
+        public RelayCommand UndoPreceedingCommand { get; set; }
+
+        public HistoryEntry SelectedHistoryEntry { get; set; }
+        public ObservableCollection<HistoryEntry> History { get; set; }
+        private DispatcherTimer _timer;
+        private TimeSpan playTime;
+        private bool isGameOver;
+        private bool noteMode;
+
+        public TimeSpan PlayTime
+        {
             get => playTime;
-            set 
+            set
             {
                 if (playTime != value)
                 {
@@ -22,43 +36,143 @@ namespace Sudoku.UI.ViewModels
                 }
             }
         }
+        public SudokuBoard Board { get; set; }
+        public string SelectedNumber { get; set; }
+        public bool NoteMode 
+        { 
+            get => noteMode;
+            set
+            {
+                if (value != noteMode)
+                {
+                    noteMode = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(NoteMode)));
+                }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+            }
+        }
+        public bool IsGameOver
+        {
+            get => isGameOver;
+            set
+            {
+                if (value != isGameOver)
+                {
+                    isGameOver = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsGameOver)));
+                }
 
-        private DispatcherTimer _timer = new DispatcherTimer();
-        private TimeSpan playTime;
+            }
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        #endregion
+
+        #region Constructor
         public GameViewModel()
         {
-            Board = new SudokuBoard(GenerateTestInput()); // DELETE LATER
+            Board = new SudokuBoard(GenerateTestInput());
+            ClickCommand = new RelayCommand<SudokuCell>(OnClick);
+            ResetCommand = new RelayCommand(OnReset);
+            UndoCommand = new RelayCommand(OnUndo);
+            UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
+
+            History = Board.History;
+
+            _timer = new DispatcherTimer();
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += _timer_Tick;
             _timer.Start();
         }
 
+        private void OnReset()
+        {
+            while (History.Count > 0)
+            {
+                var firstEntry = History.FirstOrDefault();
+                firstEntry.Undo();
+                History.Remove(firstEntry);
+                History.Remove(History.First());
+            }
+        }
+        #endregion
+
+        #region Methods
         private void _timer_Tick(object sender, EventArgs e)
         {
             PlayTime = PlayTime.Add(new TimeSpan(0, 0, 1));
         }
 
-        public SudokuCell[,] GenerateTestInput()
+        private void OnUndo()
+        {
+            if (History.Count > 0)
+            {
+                if (SelectedHistoryEntry == null)
+                {
+                    var firstEntry = History.FirstOrDefault();
+                    firstEntry.Undo();
+                    History.Remove(firstEntry);
+                }
+                else
+                {
+                    SelectedHistoryEntry.Undo();
+                    History.Remove(SelectedHistoryEntry);
+                }
+                History.Remove(History.First());
+            }
+        }
+
+        private void OnUndoPreceeding()
+        {
+            int maxIndex = History.IndexOf(SelectedHistoryEntry);
+
+            for (int i = 0; i <= maxIndex; i++)
+            {
+                History.First().Undo();
+                History.Remove(History.First());
+                History.Remove(History.First());
+            }
+        }
+
+        private void OnClick(SudokuCell cell)
+        {
+            if (NoteMode)
+            {
+                cell.SetNote(Convert.ToInt32(SelectedNumber) - 1, SelectedNumber);
+            }
+            else
+            {
+                cell.Value = SelectedNumber;
+            }
+
+            if (Board.IsFull())
+            {
+                IsGameOver = true;
+            }
+            else
+            {
+                IsGameOver = false;
+            }
+        }
+
+        private SudokuCell[,] GenerateTestInput()
         {
             SudokuCell[,] cells = new SudokuCell[9, 9];
 
             cells[0, 0] = new SudokuCell("8", isFixed: true);
-            cells[0, 1] = new SudokuCell("", "123000000");
+            cells[0, 1] = new SudokuCell("", "000000000");
             cells[0, 2] = new SudokuCell("");
             cells[0, 3] = new SudokuCell("4", isFixed: true);
             cells[0, 4] = new SudokuCell("");
-            cells[0, 5] = new SudokuCell("", "020056009");
+            cells[0, 5] = new SudokuCell("", "000000000");
             cells[0, 6] = new SudokuCell("");
             cells[0, 7] = new SudokuCell("");
             cells[0, 8] = new SudokuCell("9", isFixed: true);
 
-            cells[1, 0] = new SudokuCell("", "120000009");
+            cells[1, 0] = new SudokuCell("", "000000000");
             cells[1, 1] = new SudokuCell("");
             cells[1, 2] = new SudokuCell("");
-            cells[1, 3] = new SudokuCell("", "020056009");
+            cells[1, 3] = new SudokuCell("", "000000000");
             cells[1, 4] = new SudokuCell("");
             cells[1, 5] = new SudokuCell("6", isFixed: true);
             cells[1, 6] = new SudokuCell("2", isFixed: true);
@@ -73,7 +187,7 @@ namespace Sudoku.UI.ViewModels
             cells[2, 5] = new SudokuCell("");
             cells[2, 6] = new SudokuCell("8", isFixed: true);
             cells[2, 7] = new SudokuCell("4", isFixed: true);
-            cells[2, 8] = new SudokuCell("", "000000789");
+            cells[2, 8] = new SudokuCell("", "000000000");
 
             cells[3, 0] = new SudokuCell("");
             cells[3, 1] = new SudokuCell("8", isFixed: true);
@@ -135,96 +249,17 @@ namespace Sudoku.UI.ViewModels
             cells[8, 7] = new SudokuCell("");
             cells[8, 8] = new SudokuCell("4", isFixed: true);
 
+            for (int i = 0; i < cells.GetLength(0); i++)
+            {
+                for (int j = 0; j < cells.GetLength(1); j++)
+                {
+                    cells[i, j].Row = i;
+                    cells[i, j].Column = j;
+                }
+            }
+
             return cells;
         }
-
-        public bool CheckErrorsForCell(int row, int column)
-        {
-            var rowResult = RowErrorFound(row);
-            var columnResult = ColumnErrorFound(column);
-            var mingridResult = MingridErrorFound(row, column);
-            var result = rowResult && columnResult && mingridResult;
-            return result;
-        }
-
-        public bool RowErrorFound(int row)
-        {
-            var NotEmptyCells = Board.Rows[row].Where(cell => cell.Value != "").Select(cell => cell.Value);
-            var distinctItems = NotEmptyCells.Distinct().Count();
-            int allItems = NotEmptyCells.Count();
-
-            if (distinctItems != allItems)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool ColumnErrorFound(int column)
-        {
-            var NotEmptyCells = Board.Columns[column].Where(cell => cell.Value != "").Select(cell => cell.Value);
-            var distinctItems = NotEmptyCells.Distinct().Count();
-            int allItems = NotEmptyCells.Count();
-
-            if (distinctItems != allItems)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool MingridErrorFound(int row, int column)
-        {
-            var options = new List<int>();
-            switch (row)
-            {
-                case 0:
-                case 1:
-                case 2:
-                    options.AddRange(new List<int> { 0, 1, 2 });
-                    break;
-                case 3:
-                case 4:
-                case 5:
-                    options.AddRange(new List<int> { 3, 4, 5 });
-                    break;
-                case 6:
-                case 7:
-                case 8:
-                    options.AddRange(new List<int> { 6, 7, 8 });
-                    break;
-            }
-
-            switch (column)
-            {
-                case 0:
-                case 1:
-                case 2:
-                    options = options.Intersect(new List<int> { 0, 3, 6 }).ToList();
-                    break;
-                case 3:
-                case 4:
-                case 5:
-                    options = options.Intersect(new List<int> { 1, 4, 7 }).ToList();
-                    break;
-                case 6:
-                case 7:
-                case 8:
-                    options = options.Intersect(new List<int> { 2, 5, 8 }).ToList();
-                    break;
-            }
-
-            var NotEmptyCells = Board.Minigrids[options.First()].Where(cell => cell.Value != "").Select(cell => cell.Value);
-            var distinctItems = NotEmptyCells.Distinct().Count();
-            var distinct = NotEmptyCells.Distinct();
-            int allItems = NotEmptyCells.Count();
-
-            if (distinctItems != allItems)
-            {
-                return false;
-            }
-
-            return true;
-        }
+        #endregion
     }
 }

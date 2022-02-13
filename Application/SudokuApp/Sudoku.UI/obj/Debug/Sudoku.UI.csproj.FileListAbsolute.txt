@@ -1,6 +1,9 @@
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_back.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_background.jpg
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_hint.png
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_note.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_reset.png
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_settings.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\history_redo.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\history_undo.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\history_delete.png
@@ -53,6 +56,3 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.exe
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.pdb
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_hint.png
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_settings.png
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\game_note.png

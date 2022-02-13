@@ -79,6 +79,7 @@
     <Compile Include="ValueConverters\NoteConverter.cs" />
     <Compile Include="ValueConverters\NoteModeBackgroundConverter.cs" />
     <Compile Include="ValueConverters\NoteVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\ParentWidthConverter.cs" />
     <Compile Include="ValueConverters\ToListConverter.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />

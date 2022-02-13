@@ -3,3 +3,4 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.DataAccec
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.DataAccecss\obj\Debug\Sudoku.DataAccecss.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.DataAccecss\obj\Debug\Sudoku.DataAccecss.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.DataAccecss\obj\Debug\Sudoku.DataAccecss.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.DataAccecss\obj\Debug\Sudoku.DataAccecss.csproj.AssemblyReference.cache

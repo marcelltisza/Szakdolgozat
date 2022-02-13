@@ -14,6 +14,7 @@
 
     <Page.Resources>
         <converters:CountToBoolConverter x:Key="CountToBoolConverter"/>
+        <converters:ParentWidthConverter x:Key="ParentWidthConverter"/>
     </Page.Resources>
     <Page.Background>
         <ImageBrush ImageSource="../../Resources/Images/game_background.jpg"/>
@@ -99,9 +100,9 @@
                     Grid.Column="3"
                     BorderThickness="1.5"
                     BorderBrush="Black">
-                <StackPanel x:Name="HistoryPanel"
+                <DockPanel x:Name="HistoryPanel"
                             Background="White">
-                    <Grid Background="LightGray">
+                    <Grid Background="LightGray" DockPanel.Dock="Top">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="2*"/>
@@ -115,25 +116,27 @@
                             History
                         </Label>
                         <Button x:Name="ResetButton" 
+                                IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
                                 BorderThickness="0"
                                 Grid.Column="2"
-                                Margin="6">
+                                Margin="6"
+                                Command="{Binding ResetCommand}">
                             <Button.Background>
                                 <ImageBrush ImageSource="../../Resources/Images/game_reset.png"/>
                             </Button.Background>
                         </Button>
                         <Button x:Name="UndoButton" 
+                                IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
                                 Grid.Column="3"
                                 BorderThickness="0"
-                                Margin="6"
-                                IsEnabled="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
+                                Margin="7"
                                 Command="{Binding UndoCommand}">
                             <Button.Background>
                                 <ImageBrush ImageSource="../../Resources/Images/history_undo.png"/>
                             </Button.Background>
                         </Button>
                         <Button x:Name="RedoButton" 
-                                Margin="6"
+                                Margin="7"
                                 Grid.Column="4"
                                 BorderThickness="0">
                             <Button.Background>
@@ -141,12 +144,12 @@
                             </Button.Background>
                         </Button>
                     </Grid>
-                    
                     <ListView x:Name="HistoryList"
                               ItemsSource="{Binding History}"
                               Padding="0"
                               Margin="0 0 2 0"
-                              
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden"
                               SelectedItem="{Binding SelectedHistoryEntry}">
                         <ListView.Resources>
                             <ContextMenu x:Key="ItemContextMenu">
@@ -163,21 +166,20 @@
                                 <Border BorderBrush="DarkGray"
                                             BorderThickness="1"
                                             Margin="-4 -1.8">
-                                    <WrapPanel Orientation="Horizontal" Width="{Binding ElementName=HistoryPanel, Path=ActualWidth}"
-                                               ScrollViewer.CanContentScroll="False">
+                                    <StackPanel Orientation="Horizontal" 
+                                                Width="{Binding ElementName=HistoryPanel, Path=ActualWidth, Converter={StaticResource ParentWidthConverter}}">
                                         <Image Source="{Binding ImageSource}" Width="20" Height="20"/>
                                         <TextBlock Text="{Binding Description}"
                                                    TextWrapping="Wrap" 
                                                    VerticalAlignment="Center"
                                                    FontStyle="Italic"
                                                    Margin="4"/>
-                                    </WrapPanel>
+                                    </StackPanel>
                                 </Border>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-
-                </StackPanel>
+                </DockPanel>
             </Border>
 
         </Grid>
@@ -185,7 +187,7 @@
         <!-- LOWER CONTROL ITEMS -->
         <Grid Grid.Row="2" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
                 <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>

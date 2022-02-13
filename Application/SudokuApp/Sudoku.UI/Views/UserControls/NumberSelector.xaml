@@ -97,12 +97,12 @@
         <ToggleButton x:Name="NoteToggle" 
                       Grid.Row="1"
                       Grid.Column="10"
-                      Margin="5"
+                      Margin="5"  
                       VerticalContentAlignment="Center"
                       HorizontalContentAlignment="Center" 
                       IsChecked="{Binding NoteMode}">
             <ToggleButton.Background>
-                <ImageBrush ImageSource="..\..\Resources\Images\game_note.png"/>
+                <ImageBrush ImageSource="..\..\Resources\Images\game_note.png" Stretch="Uniform"/>
             </ToggleButton.Background>
         </ToggleButton>
         

@@ -14,6 +14,7 @@ namespace Sudoku.UI.ViewModels
         #region Properties
         public RelayCommand<SudokuCell> ClickCommand { get; set; }
         public RelayCommand UndoCommand { get; set; }
+        public RelayCommand ResetCommand { get; set; }
         public RelayCommand UndoPreceedingCommand { get; set; }
 
         public HistoryEntry SelectedHistoryEntry { get; set; }
@@ -72,6 +73,7 @@ namespace Sudoku.UI.ViewModels
         {
             Board = new SudokuBoard(GenerateTestInput());
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
+            ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
 
@@ -81,6 +83,17 @@ namespace Sudoku.UI.ViewModels
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += _timer_Tick;
             _timer.Start();
+        }
+
+        private void OnReset()
+        {
+            while (History.Count > 0)
+            {
+                var firstEntry = History.FirstOrDefault();
+                firstEntry.Undo();
+                History.Remove(firstEntry);
+                History.Remove(History.First());
+            }
         }
         #endregion
 
@@ -92,18 +105,21 @@ namespace Sudoku.UI.ViewModels
 
         private void OnUndo()
         {
-            if (SelectedHistoryEntry == null)
+            if (History.Count > 0)
             {
-                var firstEntry = History.FirstOrDefault();
-                firstEntry.Undo();
-                History.Remove(firstEntry);
+                if (SelectedHistoryEntry == null)
+                {
+                    var firstEntry = History.FirstOrDefault();
+                    firstEntry.Undo();
+                    History.Remove(firstEntry);
+                }
+                else
+                {
+                    SelectedHistoryEntry.Undo();
+                    History.Remove(SelectedHistoryEntry);
+                }
+                History.Remove(History.First());
             }
-            else
-            {
-                SelectedHistoryEntry.Undo();
-                History.Remove(SelectedHistoryEntry);
-            }
-            History.Remove(History.First());
         }
 
         private void OnUndoPreceeding()

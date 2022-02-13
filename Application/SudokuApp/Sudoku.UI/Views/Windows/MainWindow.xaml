@@ -6,7 +6,8 @@
         ResizeMode="NoResize"
         xmlns:local="clr-namespace:Sudoku.UI"
         mc:Ignorable="d"
-        Title="Sudoku App" 
+        Title="Sudoku" 
+        Icon="../../Resources/Images/app_logo.ico"
         Height="500" 
         Width="700">
     

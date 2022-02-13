@@ -5,8 +5,7 @@
     "\\Application\\SudokuApp",
     "\\Application\\SudokuApp\\Sudoku.UI",
     "\\Application\\SudokuApp\\Sudoku.UI\\Views",
-    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages",
-    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\UserControls"
+    "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages"
   ],
   "SelectedNode": "\\Application\\SudokuApp\\Sudoku.UI\\Views\\Pages\\GameView.xaml",
   "PreviewInSolutionExplorer": false

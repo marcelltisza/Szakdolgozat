@@ -7,8 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="500" 
       d:DesignWidth="700"
-      Title="MenuView"
-      Background="White">
+      Title="MenuView">
+    <Page.Background>
+        <ImageBrush ImageSource="../../Resources/Images/game_background.jpg"/>
+    </Page.Background>
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,31 +20,52 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition/>
+
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
+        <TextBlock FontSize="50"
+                   Margin="20 10"
+                   FontWeight="DemiBold">
+            Sudoku
+        </TextBlock>
+        <Image Source="../../Resources/Images/menu_logo.png"
+               Grid.Column="1"
+               Grid.Row="1"/>
         <StackPanel x:Name="MenuButtonsPanel"
                     Grid.Row="1"
-                    Grid.Column="1">
+                    Grid.Column="0">
+            
             <Button Width="200"
                     FontSize="30"
-                    Margin="0 0 0 30"
+                    BorderThickness="3"
+                    FontWeight="DemiBold"
+                    IsEnabled="False"
+                    Margin="0 30 0 20">
+                Continue
+            </Button>
+            
+            <Button Width="200"
+                    BorderThickness="3"
+                    FontSize="30"
+                    Margin="0 0 0 20"
+                    FontWeight="DemiBold"
                     Click="Button_Click">
                 New Game
-            </Button>
-            <Button Width="200"
-                    FontSize="30"
-                    Margin="0 0 0 30">
-                Continue
             </Button>
 
             <Button Width="200"
                     FontSize="30"
-                    Margin="0 0 0 30">
+                    BorderThickness="3"
+                    IsEnabled="False"
+                    FontWeight="DemiBold"
+                    Margin="0 0 0 20">
                 Options
             </Button>
             <Button Width="200"
+                    FontWeight="DemiBold"
+                    BorderThickness="3"
+                    IsEnabled="False"
                     FontSize="30">
                 Leaderboard
             </Button>

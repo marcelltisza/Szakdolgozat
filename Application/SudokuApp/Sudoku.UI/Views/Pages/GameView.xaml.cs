@@ -2,7 +2,7 @@
 
 namespace Sudoku.UI.Views
 {
-    public partial class GameView : Page
+    public partial class GameView : UserControl
     {
         public GameView()
         {

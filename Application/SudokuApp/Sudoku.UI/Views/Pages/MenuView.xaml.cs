@@ -1,21 +1,12 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace Sudoku.UI.Views
 {
-    public partial class MenuView : Page
+    public partial class MenuView : UserControl
     {
-        private Frame _frame;
-        public MenuView(Frame mainFrame)
+        public MenuView()
         {
             InitializeComponent();
-
-            _frame = mainFrame;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            _frame.Content = new GameView();
         }
     }
 }

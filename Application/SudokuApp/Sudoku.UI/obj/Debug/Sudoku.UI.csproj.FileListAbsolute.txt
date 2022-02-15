@@ -58,4 +58,3 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.pdb
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\menu_logo.png
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\Resources\Images\app_logo.ico
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\Sudoku.UI.csproj.CopyComplete

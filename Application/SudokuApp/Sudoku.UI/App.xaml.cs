@@ -1,23 +1,24 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Sudoku.Models.GameModels;
+﻿using Sudoku.UI.Stores;
+using Sudoku.UI.ViewModels;
 using System.Windows;
 
 namespace Sudoku.UI
 {
     public partial class App : Application
     {
-        private ServiceProvider serviceProvider;
-
-        public App()
+        protected override void OnStartup(StartupEventArgs e)
         {
-            ServiceCollection services = new ServiceCollection();
-            ConfigureServices(services);
-            serviceProvider = services.BuildServiceProvider();
-        }
+            NavigationStore navigationStore = new NavigationStore();
 
-        private void ConfigureServices(ServiceCollection services)
-        {
-            services.AddSingleton<SudokuBoard>();
+            navigationStore.CurrentViewModel = new MenuViewModel(navigationStore);
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainWindowViewModel(navigationStore)
+            };
+            MainWindow.Show();
+
+            base.OnStartup(e);
         }
     }
 }

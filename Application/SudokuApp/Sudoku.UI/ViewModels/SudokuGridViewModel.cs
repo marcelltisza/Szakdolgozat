@@ -1,6 +1,6 @@
 ﻿namespace Sudoku.UI.ViewModels
 {
-    public class SudokuGridViewModel
+    public class SudokuGridViewModel : ViewModelBase
     {
         public SudokuGridViewModel()
         {

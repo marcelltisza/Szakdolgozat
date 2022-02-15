@@ -8,7 +8,6 @@ namespace Sudoku.UI
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new MenuView(MainFrame);
         }
     }
 }

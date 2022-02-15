@@ -1,15 +1,17 @@
 ﻿using Sudoku.Models.Extensions;
 using Sudoku.Models.GameModels;
 using Sudoku.UI.Commands;
+using Sudoku.UI.Stores;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace Sudoku.UI.ViewModels
 {
-    public class GameViewModel : INotifyPropertyChanged
+    public class GameViewModel : ViewModelBase, INotifyPropertyChanged
     {
         #region Properties
         public RelayCommand<SudokuCell> ClickCommand { get; set; }
@@ -23,6 +25,7 @@ namespace Sudoku.UI.ViewModels
         private TimeSpan playTime;
         private bool isGameOver;
         private bool noteMode;
+        public ICommand NavigateToMenuCommand { get; }
 
         public TimeSpan PlayTime
         {
@@ -69,13 +72,14 @@ namespace Sudoku.UI.ViewModels
         #endregion
 
         #region Constructor
-        public GameViewModel()
+        public GameViewModel(NavigationStore navigationStore)
         {
             Board = new SudokuBoard(GenerateTestInput());
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
             ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
+            NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, () => new MenuViewModel(navigationStore));
 
             History = Board.History;
 
@@ -84,7 +88,9 @@ namespace Sudoku.UI.ViewModels
             _timer.Tick += _timer_Tick;
             _timer.Start();
         }
+        #endregion
 
+        #region Methods
         private void OnReset()
         {
             while (History.Count > 0)
@@ -95,9 +101,7 @@ namespace Sudoku.UI.ViewModels
                 History.Remove(History.First());
             }
         }
-        #endregion
 
-        #region Methods
         private void _timer_Tick(object sender, EventArgs e)
         {
             PlayTime = PlayTime.Add(new TimeSpan(0, 0, 1));

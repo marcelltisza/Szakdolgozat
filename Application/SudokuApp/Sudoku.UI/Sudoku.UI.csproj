@@ -79,7 +79,9 @@
     <Compile Include="ValueConverters\CountToBoolConverter.cs" />
     <Compile Include="ValueConverters\FixedBackgroundConverter.cs" />
     <Compile Include="ValueConverters\FontWeightConverter.cs" />
+    <Compile Include="ValueConverters\HighlightConverter.cs" />
     <Compile Include="ValueConverters\NoteConverter.cs" />
+    <Compile Include="ValueConverters\NoteHighlightConverter.cs" />
     <Compile Include="ValueConverters\NoteModeBackgroundConverter.cs" />
     <Compile Include="ValueConverters\NoteVisibilityConverter.cs" />
     <Compile Include="ValueConverters\ParentWidthConverter.cs" />

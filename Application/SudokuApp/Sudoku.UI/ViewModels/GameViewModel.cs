@@ -25,6 +25,7 @@ namespace Sudoku.UI.ViewModels
         private TimeSpan playTime;
         private bool isGameOver;
         private bool noteMode;
+        private string selectedNumber;
         public ICommand NavigateToMenuCommand { get; }
 
         public TimeSpan PlayTime
@@ -40,7 +41,18 @@ namespace Sudoku.UI.ViewModels
             }
         }
         public SudokuBoard Board { get; set; }
-        public string SelectedNumber { get; set; }
+        public string SelectedNumber
+        {
+            get => selectedNumber;
+            set
+            {
+                if (selectedNumber != value)
+                {
+                    selectedNumber = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedNumber)));
+                }
+            }
+        }
         public bool NoteMode 
         { 
             get => noteMode;

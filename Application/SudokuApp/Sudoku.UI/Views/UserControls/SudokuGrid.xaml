@@ -17,6 +17,43 @@
         <converter:BooleanInverter x:Key="BooleanIverter"/>
         <converter:FontWeightConverter x:Key="FontWeightConverter"/>
         <converter:ToListConverter x:Key="ToListConverter" />
+        <converter:HighlightConverter x:Key="HighlightConverter"/>
+        <converter:ForegroundHighlightConverter x:Key="ForegroundHighlightConverter"/>
+
+        <Style TargetType="TextBlock" x:Key="ValueHighlightStyle">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource HighlightConverter}" Mode="OneWay">
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="Text"/>
+                        <Binding RelativeSource="{RelativeSource AncestorType=UserControl, AncestorLevel=2}" Path="DataContext.SelectedNumber"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource ForegroundHighlightConverter}" Mode="OneWay">
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="Text"/>
+                        <Binding RelativeSource="{RelativeSource AncestorType=UserControl, AncestorLevel=2}" Path="DataContext.SelectedNumber"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="NoteHighlightStyle">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource ForegroundHighlightConverter}" Mode="OneWay">
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="Content"/>
+                        <Binding RelativeSource="{RelativeSource AncestorType=UserControl, AncestorLevel=2}" Path="DataContext.SelectedNumber"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight">
+                <Setter.Value>
+                    <FontWeight>Bold</FontWeight>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
 
     <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Board.Cells, Converter={StaticResource ToListConverter}}">
@@ -29,16 +66,21 @@
 
                         <Button x:Name="ValueButton"
                                 FontSize="16"
+                                Foreground="Black"
                                 Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ClickCommand}"
                                 CommandParameter="{Binding}"
                                 IsHitTestVisible="{Binding IsFixed, Converter={StaticResource BooleanIverter}}"
                                 Background="{Binding IsFixed, Converter={StaticResource FixedbackGroundConverter}}"
-                                FontWeight="{Binding IsFixed, Converter={StaticResource FontWeightConverter}}"
-                                Content="{Binding Value}"/> 
+                                FontWeight="{Binding IsFixed, Converter={StaticResource FontWeightConverter}}" >
+                            <TextBlock x:Name="ValueText"
+                                       Text="{Binding Value}"
+                                       Style="{StaticResource ValueHighlightStyle}"
+                                       TextAlignment="Center"/>
+                        </Button> 
 
                         <Grid x:Name="NoteGrid" 
-                          IsHitTestVisible="False"
-                          Margin="1.5">
+                              IsHitTestVisible="False"
+                              Margin="1.5">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -51,76 +93,85 @@
                             </Grid.ColumnDefinitions>
 
                             <Button Grid.Column="0"
-                        Grid.Row="0"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        Background="Transparent"
-                        FontSize="6"
-                        BorderThickness="0"
-                        Content="{Binding Notes[0], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="0"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    Background="Transparent"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    FontSize="6"
+                                    BorderThickness="0"
+                                    Content="{Binding Notes[0], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="1"
-                        Grid.Row="0"
-                        FontSize="6"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Content="{Binding Notes[1], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="0"
+                                    FontSize="6"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Content="{Binding Notes[1], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="2"
-                        Grid.Row="0"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        FontSize="6"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Content="{Binding Notes[2], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="0"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    FontSize="6"
+                                    Background="Transparent"
+                                    BorderThickness="0"
+                                    Content="{Binding Notes[2], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="0"
-                        Grid.Row="1"
-                        FontSize="6"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        BorderThickness="0"
-                        Background="Transparent"
-                        Content="{Binding Notes[3], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="1"
+                                    FontSize="6"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[3], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="1"
-                        Grid.Row="1"
-                        FontSize="6"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        BorderThickness="0"
-                        Background="Transparent"
-                        Content="{Binding Notes[4], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="1"
+                                    FontSize="6"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[4], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="2"
-                        Grid.Row="1"
-                        FontSize="6"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        BorderThickness="0"
-                        Background="Transparent"
-                        Content="{Binding Notes[5], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="1"
+                                    FontSize="6"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[5], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="0"
-                        Grid.Row="2"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        BorderThickness="0"
-                        FontSize="6"
-                        Background="Transparent"
-                        Content="{Binding Notes[6], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="2"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    BorderThickness="0"
+                                    FontSize="6"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[6], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="1"
-                        Grid.Row="2"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        FontSize="6"
-                        BorderThickness="0"
-                        Background="Transparent"
-                        Content="{Binding Notes[7], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="2"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    FontSize="6"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[7], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="2"
-                        Grid.Row="2"
-                        Visibility="{Binding ElementName=ValueButton, Path=Content, Converter={StaticResource NoteVisibilityConverter}}"
-                        FontSize="6"
-                        BorderThickness="0"
-                        Background="Transparent"
-                        Content="{Binding Notes[8], Converter={StaticResource NoteConverter}}"/>
+                                    Grid.Row="2"
+                                    Style="{StaticResource NoteHighlightStyle}"
+                                    Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
+                                    FontSize="6"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    Content="{Binding Notes[8], Converter={StaticResource NoteConverter}}"/>
                         </Grid>
                     </Grid>
                 </Border>

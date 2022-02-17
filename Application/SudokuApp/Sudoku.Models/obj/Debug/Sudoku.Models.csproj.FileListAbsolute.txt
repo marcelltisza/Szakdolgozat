@@ -3,4 +3,3 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\bi
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\Sudoku.Models.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\Sudoku.Models.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\Sudoku.Models.pdb
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\Sudoku.Models.csproj.AssemblyReference.cache

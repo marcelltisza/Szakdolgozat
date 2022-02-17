@@ -14,7 +14,7 @@ namespace Sudoku.UI.ValueConverters
             {
                 return FontWeights.Bold;
             }
-            return FontWeights.Normal;
+            return FontWeights.DemiBold;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

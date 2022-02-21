@@ -53,6 +53,8 @@
                     <FontWeight>Bold</FontWeight>
                 </Setter.Value>
             </Setter>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Padding" Value="1 -1 1 1"/>
         </Style>
     </UserControl.Resources>
 
@@ -65,7 +67,7 @@
                     <Grid x:Name="CellGrid">
 
                         <Button x:Name="ValueButton"
-                                FontSize="16"
+                                FontSize="24"
                                 Foreground="Black"
                                 Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ClickCommand}"
                                 CommandParameter="{Binding}"
@@ -79,8 +81,7 @@
                         </Button> 
 
                         <Grid x:Name="NoteGrid" 
-                              IsHitTestVisible="False"
-                              Margin="1.5">
+                              IsHitTestVisible="False">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -97,13 +98,12 @@
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     Background="Transparent"
                                     Style="{StaticResource NoteHighlightStyle}"
-                                    FontSize="6"
+                                    FontSize="10"
                                     BorderThickness="0"
                                     Content="{Binding Notes[0], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="1"
                                     Grid.Row="0"
-                                    FontSize="6"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     Background="Transparent"
@@ -114,14 +114,12 @@
                                     Grid.Row="0"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
-                                    FontSize="6"
                                     Background="Transparent"
                                     BorderThickness="0"
                                     Content="{Binding Notes[2], Converter={StaticResource NoteConverter}}"/>
 
                             <Button Grid.Column="0"
                                     Grid.Row="1"
-                                    FontSize="6"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     BorderThickness="0"
@@ -130,7 +128,6 @@
 
                             <Button Grid.Column="1"
                                     Grid.Row="1"
-                                    FontSize="6"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     BorderThickness="0"
@@ -139,7 +136,6 @@
 
                             <Button Grid.Column="2"
                                     Grid.Row="1"
-                                    FontSize="6"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     BorderThickness="0"
@@ -151,7 +147,6 @@
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
                                     BorderThickness="0"
-                                    FontSize="6"
                                     Background="Transparent"
                                     Content="{Binding Notes[6], Converter={StaticResource NoteConverter}}"/>
 
@@ -159,7 +154,6 @@
                                     Grid.Row="2"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
-                                    FontSize="6"
                                     BorderThickness="0"
                                     Background="Transparent"
                                     Content="{Binding Notes[7], Converter={StaticResource NoteConverter}}"/>
@@ -168,7 +162,6 @@
                                     Grid.Row="2"
                                     Style="{StaticResource NoteHighlightStyle}"
                                     Visibility="{Binding ElementName=ValueText, Path=Text, Converter={StaticResource NoteVisibilityConverter}}"
-                                    FontSize="6"
                                     BorderThickness="0"
                                     Background="Transparent"
                                     Content="{Binding Notes[8], Converter={StaticResource NoteConverter}}"/>

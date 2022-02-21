@@ -9,6 +9,7 @@ namespace Sudoku.UI
         protected override void OnStartup(StartupEventArgs e)
         {
             NavigationStore navigationStore = new NavigationStore();
+            ModalNavigationStore modalNavigationStore = new ModalNavigationStore();
 
             navigationStore.CurrentViewModel = new MenuViewModel(navigationStore);
 

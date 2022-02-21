@@ -1,7 +1,6 @@
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\bin\Debug\netcoreapp3.1\Sudoku.Models.deps.json
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\bin\Debug\netcoreapp3.1\Sudoku.Models.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\bin\Debug\netcoreapp3.1\Sudoku.Models.pdb
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\netcoreapp3.1\Sudoku.Models.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\netcoreapp3.1\Sudoku.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\netcoreapp3.1\Sudoku.Models.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Models\obj\Debug\netcoreapp3.1\Sudoku.Models.dll

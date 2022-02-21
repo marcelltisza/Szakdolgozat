@@ -47,11 +47,11 @@ namespace Sudoku.Models.GameModels
                 switch (Action)
                 {
                     case ActionType.Add:
-                        return "../../Resources/Images/history_add.png";
+                        return "../../Resources/Images/History/history_add.png";
                     case ActionType.Change:
-                        return "../../Resources/Images/history_change.png";
+                        return "../../Resources/Images/History/history_change.png";
                     case ActionType.Delete:
-                        return "../../Resources/Images/history_delete.png";
+                        return "../../Resources/Images/History/history_delete.png";
                     default:
                         throw new Exception(message: "Invalid action type");
                 }

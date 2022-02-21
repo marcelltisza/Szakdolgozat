@@ -6,7 +6,9 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Resources\Images\app_logo.ico" />
+    <None Remove="Resources\Images\Difficulty\difficulty_easy.png" />
+    <None Remove="Resources\Images\Difficulty\difficulty_hard.png" />
+    <None Remove="Resources\Images\Difficulty\difficulty_medium.png" />
     <None Remove="Resources\Images\game_back.png" />
     <None Remove="Resources\Images\game_background.jpg" />
     <None Remove="Resources\Images\game_hint.png" />
@@ -19,7 +21,18 @@
     <None Remove="Resources\Images\history_delete.png" />
     <None Remove="Resources\Images\history_redo.png" />
     <None Remove="Resources\Images\history_undo.png" />
-    <None Remove="Resources\Images\menu_logo.png" />
+    <None Remove="Resources\Images\Menu\app_logo.ico" />
+    <None Remove="Resources\Images\Menu\menu_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Difficulty\difficulty_medium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Difficulty\difficulty_easy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SimpleModal.WPF" Version="1.0.0" />
@@ -28,46 +41,49 @@
     <ProjectReference Include="..\Sudoku.Models\Sudoku.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\app_logo.ico">
+    <Resource Include="Resources\Images\Difficulty\difficulty_hard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_back.png">
+    <Resource Include="Resources\Images\Menu\app_logo.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_background.jpg">
+    <Resource Include="Resources\Images\Menu\menu_logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_hint.png">
+    <Resource Include="Resources\Images\PlayArea\game_back.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_note.png">
+    <Resource Include="Resources\Images\PlayArea\game_background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_reset.png">
+    <Resource Include="Resources\Images\PlayArea\game_hint.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\game_settings.png">
+    <Resource Include="Resources\Images\PlayArea\game_note.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_add.png">
+    <Resource Include="Resources\Images\PlayArea\game_reset.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_change.png">
+    <Resource Include="Resources\Images\PlayArea\game_settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_default.png">
+    <Resource Include="Resources\Images\History\history_add.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_delete.png">
+    <Resource Include="Resources\Images\History\history_change.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_redo.png">
+    <Resource Include="Resources\Images\History\history_default.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\history_undo.png">
+    <Resource Include="Resources\Images\History\history_delete.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\menu_logo.png">
+    <Resource Include="Resources\Images\History\history_redo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\History\history_undo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

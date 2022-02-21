@@ -12,16 +12,16 @@ namespace Sudoku.UI.Commands
         where TViewModel : ViewModelBase
     {
         private readonly NavigationStore _navigationStore;
-        private readonly Func<TViewModel> _createViewModel;
+        private readonly Func<object, TViewModel> _createViewModel;
 
-        public NavigateCommand(NavigationStore navigationStore, Func<TViewModel> createViewModel)
+        public NavigateCommand(NavigationStore navigationStore, Func<object, TViewModel> createViewModel)
         {
             _navigationStore = navigationStore;
             _createViewModel = createViewModel;
         }
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = _createViewModel();
+            _navigationStore.CurrentViewModel = _createViewModel(parameter);
         }
     }
 }

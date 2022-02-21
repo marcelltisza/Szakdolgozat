@@ -84,14 +84,14 @@ namespace Sudoku.UI.ViewModels
         #endregion
 
         #region Constructor
-        public GameViewModel(NavigationStore navigationStore)
+        public GameViewModel(NavigationStore navigationStore, SudokuBoard board)
         {
-            Board = new SudokuBoard(GenerateTestInput());
+            Board = board;
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
             ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
-            NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, () => new MenuViewModel(navigationStore));
+            NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, (object param) => new MenuViewModel(navigationStore));
 
             History = Board.History;
 

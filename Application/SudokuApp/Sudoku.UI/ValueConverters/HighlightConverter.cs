@@ -13,7 +13,8 @@ namespace Sudoku.UI.ValueConverters
             DropShadowEffect dropShadow = new DropShadowEffect
             {
                 BlurRadius = 10,
-                ShadowDepth = 0
+                ShadowDepth = 0,
+                Color = Colors.Transparent
             };
             try
             {

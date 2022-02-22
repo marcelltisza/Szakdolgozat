@@ -121,20 +121,16 @@ namespace Sudoku.UI.ViewModels
 
         private void OnUndo()
         {
-            if (History.Count > 0)
+            if (SelectedHistoryEntry == null)
             {
-                if (SelectedHistoryEntry == null)
-                {
-                    var firstEntry = History.FirstOrDefault();
-                    firstEntry.Undo();
-                    History.Remove(firstEntry);
-                }
-                else
-                {
-                    SelectedHistoryEntry.Undo();
-                    History.Remove(SelectedHistoryEntry);
-                }
+                var firstEntry = History.FirstOrDefault();
+                firstEntry.Undo();
+                History.Remove(firstEntry);
                 History.Remove(History.First());
+            }
+            else
+            {
+                OnUndoPreceeding();
             }
         }
 

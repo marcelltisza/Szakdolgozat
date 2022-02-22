@@ -19,6 +19,8 @@
         <converter:ToListConverter x:Key="ToListConverter" />
         <converter:HighlightConverter x:Key="HighlightConverter"/>
         <converter:ForegroundHighlightConverter x:Key="ForegroundHighlightConverter"/>
+        <converter:HitTestConverter x:Key="HitTestConverter"/>
+        
 
         <Style TargetType="TextBlock" x:Key="ValueHighlightStyle">
             <Setter Property="Effect">
@@ -56,6 +58,17 @@
             <Setter Property="FontSize" Value="10"/>
             <Setter Property="Padding" Value="1 -1 1 1"/>
         </Style>
+        <Style TargetType="Button" x:Key="ValueButtonStyle">
+            <Setter Property="IsHitTestVisible">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource HitTestConverter}">
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="Content.Text"/>
+                        <Binding Path="IsFixed"/>
+                        <Binding RelativeSource="{RelativeSource AncestorType=UserControl, AncestorLevel=2}" Path="DataContext.NoteMode"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
 
     <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Board.Cells, Converter={StaticResource ToListConverter}}">
@@ -67,11 +80,12 @@
                     <Grid x:Name="CellGrid">
 
                         <Button x:Name="ValueButton"
+                                Style="{StaticResource ValueButtonStyle}"
                                 FontSize="24"
                                 Foreground="Black"
                                 Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ClickCommand}"
                                 CommandParameter="{Binding}"
-                                IsHitTestVisible="{Binding IsFixed, Converter={StaticResource BooleanIverter}}"
+                                
                                 Background="{Binding IsFixed, Converter={StaticResource FixedbackGroundConverter}}"
                                 FontWeight="{Binding IsFixed, Converter={StaticResource FontWeightConverter}}" >
                             <TextBlock x:Name="ValueText"

@@ -135,7 +135,7 @@
                       Margin="5"
                       FontWeight="Bold"
                       Click="ToggleButton_Click">
-            <TextBlock Text="1"
+            <TextBlock Text="9"
                            Style="{StaticResource SelectorTextStyle}"
                            FontSize="24"/>
         </ToggleButton>

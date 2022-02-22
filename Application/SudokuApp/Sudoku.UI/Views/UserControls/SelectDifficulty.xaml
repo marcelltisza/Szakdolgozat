@@ -41,7 +41,7 @@
                 Height="70"
                 HorizontalContentAlignment="Stretch"
                 Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.CreateNewGameCommand}"
-                CommandParameter="easy">
+                CommandParameter="medium">
             <StackPanel Orientation="Horizontal">
                 <Image Source="..\..\Resources\Images\Difficulty\difficulty_medium.png" />
                 <Label FontSize="20"
@@ -57,7 +57,7 @@
                 Height="70"
                 HorizontalContentAlignment="Stretch"
                 Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.CreateNewGameCommand}"
-                CommandParameter="easy">
+                CommandParameter="hard">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                 <Image Source="..\..\Resources\Images\Difficulty\difficulty_hard.png" />
                 <Label FontSize="20"

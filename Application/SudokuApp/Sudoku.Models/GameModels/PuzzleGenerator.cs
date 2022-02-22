@@ -22,17 +22,17 @@ namespace Sudoku.Models.GameModels
 
         private SudokuBoard GenerateEasyPuzzle()
         {
-            return new SudokuBoard(GenerateTestInput());
+            return new SudokuBoard(GenerateTestInput(), DifficultyType.Easy);
         }
 
         private SudokuBoard GenerateMediumPuzzle()
         {
-            return new SudokuBoard(GenerateTestInput());
+            return new SudokuBoard(GenerateTestInput(), DifficultyType.Medium);
         }
 
         private SudokuBoard GenerateHardPuzzle()
         {
-            return new SudokuBoard(GenerateTestInput());
+            return new SudokuBoard(GenerateTestInput(), DifficultyType.Hard);
         }
 
         private SudokuCell[,] GenerateTestInput()

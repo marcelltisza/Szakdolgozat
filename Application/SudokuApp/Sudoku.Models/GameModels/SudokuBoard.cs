@@ -1,4 +1,5 @@
-﻿using Sudoku.Models.Events;
+﻿using Sudoku.Models.Enumerations;
+using Sudoku.Models.Events;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -11,9 +12,11 @@ namespace Sudoku.Models.GameModels
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
         public SudokuCell[,] Cells { get; set; }
+        public DifficultyType Difficulty { get; set; }
 
-        public SudokuBoard(SudokuCell[,] cells)
+        public SudokuBoard(SudokuCell[,] cells, DifficultyType difficulty)
         {
+            Difficulty = difficulty;
             Cells = cells;
             History = new ObservableCollection<HistoryEntry>();
             foreach (var cell in Cells)

@@ -37,7 +37,7 @@ namespace Sudoku.Models.GameModels
                 }
                 return ActionType.Error;
             }
-            private set => action = value;
+            set => action = value;
         }
 
         public string ImageSource

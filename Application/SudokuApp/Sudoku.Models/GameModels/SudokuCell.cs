@@ -10,10 +10,10 @@ namespace Sudoku.Models.GameModels
         public event EventHandler<CellChangedEventArgs> CellChanged = delegate { };
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private string value;
-        private string notes;
+        private string value = "";
+        private string notes = "000000000";
 
-        public bool IsFixed { get; set; }
+        public bool IsFixed { get; set; } = false;
         public int Row { get; set; }
         public int Column { get; set; }
 
@@ -53,11 +53,8 @@ namespace Sudoku.Models.GameModels
             }
         }
 
-        public SudokuCell(string value, string notes = "000000000", bool isFixed = false)
+        public SudokuCell()
         {
-            Value = value;
-            Notes = notes;
-            IsFixed = isFixed;
         }
 
         public void SetNote(int index, string value)

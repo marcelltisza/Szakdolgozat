@@ -10,14 +10,14 @@ namespace Sudoku.UI.ValueConverters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            SudokuCell[,] matrix = value as SudokuCell[,];
+            SudokuCell[][] matrix = value as SudokuCell[][];
             List<SudokuCell> list = new List<SudokuCell>();
 
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.Length; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix[i].Length; j++)
                 {
-                    list.Add(matrix[i, j]);
+                    list.Add(matrix[i][j]);
                 }
             }
 

@@ -23,6 +23,19 @@
         "runtime": {
           "bin/placeholder/Sudoku.Models.dll": {}
         }
+      },
+      "Sudoku.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Sudoku.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Sudoku.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sudoku.Services.dll": {}
+        }
       }
     }
   },
@@ -43,12 +56,18 @@
       "type": "project",
       "path": "../Sudoku.Models/Sudoku.Models.csproj",
       "msbuildProject": "../Sudoku.Models/Sudoku.Models.csproj"
+    },
+    "Sudoku.Services/1.0.0": {
+      "type": "project",
+      "path": "../Sudoku.Services/Sudoku.Services.csproj",
+      "msbuildProject": "../Sudoku.Services/Sudoku.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "SimpleModal.WPF >= 1.0.0",
-      "Sudoku.Models >= 1.0.0"
+      "Sudoku.Models >= 1.0.0",
+      "Sudoku.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -85,6 +104,9 @@
           "projectReferences": {
             "C:\\Users\\Lenovo\\Source\\Repos\\Szakdolgozat\\Application\\SudokuApp\\Sudoku.Models\\Sudoku.Models.csproj": {
               "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\Szakdolgozat\\Application\\SudokuApp\\Sudoku.Models\\Sudoku.Models.csproj"
+            },
+            "C:\\Users\\Lenovo\\Source\\Repos\\Szakdolgozat\\Application\\SudokuApp\\Sudoku.Services\\Sudoku.Services.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Source\\Repos\\Szakdolgozat\\Application\\SudokuApp\\Sudoku.Services\\Sudoku.Services.csproj"
             }
           }
         }

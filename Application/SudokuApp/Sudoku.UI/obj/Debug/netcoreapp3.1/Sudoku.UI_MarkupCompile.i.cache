@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\App.xaml
-10-2015532264
+11-53323484
 
-44-1295329716
-194-1604055774
-Views\Pages\GameView.xaml;Views\Pages\LeaderboardView.xaml;Views\Pages\MenuView.xaml;Views\Pages\OptionsView.xaml;Views\UserControls\GameOver.xaml;Views\UserControls\NumberSelector.xaml;Views\UserControls\SelectDifficulty.xaml;Views\UserControls\SudokuBorders.xaml;Views\UserControls\SudokuGrid.xaml;Views\Windows\MainWindow.xaml;
+47-763053859
+1951575108461
+Views\Pages\GameView.xaml;Views\Pages\LeaderboardView.xaml;Views\Pages\MenuView.xaml;Views\Pages\OptionsView.xaml;Views\Pages\SolverView.xaml;Views\UserControls\GameOver.xaml;Views\UserControls\NumberSelector.xaml;Views\UserControls\SelectDifficulty.xaml;Views\UserControls\SudokuBorders.xaml;Views\UserControls\SudokuGrid.xaml;Views\Windows\MainWindow.xaml;
 
-True
+False
 

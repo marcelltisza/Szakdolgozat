@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sudoku.UI.Properties {
+namespace Sudoku.UI {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class GameSettings : global::System.Configuration.ApplicationSettingsBase {
         
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        private static GameSettings defaultInstance = ((GameSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new GameSettings())));
         
-        public static Settings Default {
+        public static GameSettings Default {
             get {
                 return defaultInstance;
             }
@@ -26,12 +26,12 @@ namespace Sudoku.UI.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool GameStarted {
+        public bool SavedGameExists {
             get {
-                return ((bool)(this["GameStarted"]));
+                return ((bool)(this["SavedGameExists"]));
             }
             set {
-                this["GameStarted"] = value;
+                this["SavedGameExists"] = value;
             }
         }
     }

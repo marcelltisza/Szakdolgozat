@@ -1,11 +1,14 @@
 ﻿using Sudoku.Models.Enumerations;
 using Sudoku.Models.Extensions;
 using Sudoku.Models.GameModels;
+using Sudoku.Services;
 using Sudoku.UI.Commands;
+using Sudoku.UI.Properties;
 using Sudoku.UI.Stores;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using System.Windows.Threading;
@@ -28,6 +31,7 @@ namespace Sudoku.UI.ViewModels
         private bool noteMode;
         private string selectedNumber;
         private bool gameOverViewIsOpen;
+        private readonly NavigationStore navigationStore;
 
         public ICommand NavigateToMenuCommand { get; }
 
@@ -99,6 +103,8 @@ namespace Sudoku.UI.ViewModels
             }
         }
 
+        private XmlHandler _xmlHandler = new XmlHandler();
+
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         #endregion
 
@@ -106,12 +112,13 @@ namespace Sudoku.UI.ViewModels
         public GameViewModel(NavigationStore navigationStore, SudokuBoard board)
         {
             Difficulty = board.Difficulty;
+            this.navigationStore = navigationStore;
             Board = board;
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
             ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
-            NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, (object param) => new MenuViewModel(navigationStore));
+            NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, OnNavigateToMenu);
 
             History = Board.History;
 
@@ -123,6 +130,14 @@ namespace Sudoku.UI.ViewModels
         #endregion
 
         #region Methods
+
+        private MenuViewModel OnNavigateToMenu(object param)
+        {
+            if (!GameOverViewIsOpen)
+                _xmlHandler.Write<SudokuBoard>(Board, "savedGame.xml");
+            return new MenuViewModel(navigationStore);
+        }
+
         private void OnReset()
         {
             while (History.Count > 0)
@@ -180,6 +195,7 @@ namespace Sudoku.UI.ViewModels
             if (Board.IsFull() && Board.IsSolved())
             {
                 _timer.Stop();
+                File.Delete("savedGame.xml");
                 GameOverViewIsOpen = true;
             }
         }

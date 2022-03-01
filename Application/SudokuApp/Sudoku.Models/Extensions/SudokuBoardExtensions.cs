@@ -17,11 +17,11 @@ namespace Sudoku.Models.Extensions
 
         public static bool IsFull(this SudokuBoard board)
         {
-            for (int i = 0; i < board.Cells.GetLength(0); i++)
+            for (int i = 0; i < board.Cells.Length; i++)
             {
-                for (int j = 0; j < board.Cells.GetLength(1); j++)
+                for (int j = 0; j < board.Cells[i].Length; j++)
                 {
-                    if (string.IsNullOrEmpty(board.Cells[i, j].Value))
+                    if (string.IsNullOrEmpty(board.Cells[i][j].Value))
                         return false;
                 }
             }
@@ -30,9 +30,9 @@ namespace Sudoku.Models.Extensions
 
         public static bool IsSolved(this SudokuBoard board)
         {
-            for (int i = 0; i < board.Cells.GetLength(0); i++)
+            for (int i = 0; i < board.Cells.Length; i++)
             {
-                for (int j = 0; j < board.Cells.GetLength(1); j++)
+                for (int j = 0; j < board.Cells[i].Length; j++)
                 {
                     if (board.CheckErrorsForCell(i, j) == false)
                         return false;

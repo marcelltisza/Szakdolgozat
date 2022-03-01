@@ -2,6 +2,8 @@
 using Sudoku.Models.Events;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Xml.Serialization;
 
 namespace Sudoku.Models.GameModels
 {
@@ -11,21 +13,32 @@ namespace Sudoku.Models.GameModels
         public SudokuCell[][] Rows { get; set; }
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
-        public SudokuCell[,] Cells { get; set; }
+        private SudokuCell[][] _cells;
+
+        public SudokuCell[][] Cells 
+        { 
+            get => _cells; 
+            set
+            {
+                _cells = value;
+                foreach (var row in Cells)
+                {
+                    foreach (var cell in row)
+                    {
+                        cell.CellChanged += OnCellChanged;
+                    }
+                }
+
+                SetRows();
+                SetColumns();
+                SetMinigrids();
+            }
+        }
         public DifficultyType Difficulty { get; set; }
 
-        public SudokuBoard(SudokuCell[,] cells, DifficultyType difficulty)
+        public SudokuBoard()
         {
-            Difficulty = difficulty;
-            Cells = cells;
             History = new ObservableCollection<HistoryEntry>();
-            foreach (var cell in Cells)
-            {
-                cell.CellChanged += OnCellChanged;
-            }
-            SetRows();
-            SetColumns();
-            SetMinigrids();
         }
 
         private void OnCellChanged(object sender, CellChangedEventArgs e)
@@ -46,13 +59,13 @@ namespace Sudoku.Models.GameModels
         private void SetRows()
         {
             Rows = new SudokuCell[9][];
-            for (int i = 0; i < Cells.GetLength(0); i++)
+            for (int i = 0; i < 9; i++)
             {
                 Rows[i] = new SudokuCell[9];
                 var row = Rows[i];
-                for (int j = 0; j < Cells.GetLength(1); j++)
+                for (int j = 0; j < 9; j++)
                 {
-                    row[j] = Cells[i, j];
+                    row[j] = Cells[i][j];
                 }
             }
         }
@@ -60,13 +73,13 @@ namespace Sudoku.Models.GameModels
         private void SetColumns()
         {
             Columns = new SudokuCell[9][];
-            for (int i = 0; i < Cells.GetLength(1); i++)
+            for (int i = 0; i < 9; i++)
             {
                 Columns[i] = new SudokuCell[9];
                 var column = Columns[i];
-                for (int j = 0; j < Cells.GetLength(0); j++)
+                for (int j = 0; j < 9; j++)
                 {
-                    column[j] = Cells[j, i];
+                    column[j] = Cells[j][i];
                 }
             }
         }
@@ -91,15 +104,15 @@ namespace Sudoku.Models.GameModels
         {
             var minigrid = new List<SudokuCell>();
 
-            for (int i = 0; i < Cells.GetLength(0); i++)
+            for (int i = 0; i < 9; i++)
             {
                 if (3 * row <= i && 3 * row + 3 > i)
                 {
-                    for (int j = 0; j < Cells.GetLength(1); j++)
+                    for (int j = 0; j < 9; j++)
                     {
                         if (3 * column <= j && 3 * column + 3 > j)
                         {
-                            minigrid.Add(Cells[i, j]);
+                            minigrid.Add(Cells[i][j]);
                         }
                     }
                 }

@@ -41,3 +41,8 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.genruntimeconfig.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.baml
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll.config
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.g.cs
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.baml

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku.Models", "Sudoku.Mod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudoku.Services", "Sudoku.Services\Sudoku.Services.csproj", "{FD28E4FD-5357-4923-B68F-FE33330E4DA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku.DataAccess", "Sudoku.DataAccess\Sudoku.DataAccess.csproj", "{B2C2C921-3073-4026-BB2A-40C6E03F9548}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD28E4FD-5357-4923-B68F-FE33330E4DA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2C2C921-3073-4026-BB2A-40C6E03F9548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2C2C921-3073-4026-BB2A-40C6E03F9548}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2C2C921-3073-4026-BB2A-40C6E03F9548}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2C2C921-3073-4026-BB2A-40C6E03F9548}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

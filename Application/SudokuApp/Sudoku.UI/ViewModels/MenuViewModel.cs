@@ -1,9 +1,12 @@
 ﻿using Sudoku.Models.Enumerations;
 using Sudoku.Models.GameModels;
+using Sudoku.Services;
 using Sudoku.UI.Commands;
+using Sudoku.UI.Properties;
 using Sudoku.UI.Stores;
 using System;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Input;
 
 namespace Sudoku.UI.ViewModels
@@ -11,13 +14,16 @@ namespace Sudoku.UI.ViewModels
     public class MenuViewModel : ViewModelBase, INotifyPropertyChanged
     {
         public ICommand NavigateToGameCommand { get; }
+        public ICommand NavigateToSolverCommand { get; }
         public ICommand NewGameCommand { get; }
         public ICommand CreateNewGameCommand { get; }
+        public ICommand ContinueCommand { get; }
 
         private readonly ModalNavigationStore _modalNavigationStore;
         private bool isOpen;
         private PuzzleGenerator _puzzleGenerator;
         private SudokuBoard gameBoard;
+        private XmlHandler _xmlHandler = new XmlHandler();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -51,11 +57,26 @@ namespace Sudoku.UI.ViewModels
         public MenuViewModel(NavigationStore navigationStore)
         {
             NewGameCommand = new RelayCommand(NewGameExecute);
+            ContinueCommand = new RelayCommand(OnContinue, CanContinue);
+            
             CreateNewGameCommand = new RelayCommand<string>(CreateNewGame);
             NavigateToGameCommand = new NavigateCommand<GameViewModel>(navigationStore, (object board) => new GameViewModel(navigationStore, (SudokuBoard)board));
+            NavigateToSolverCommand = new NavigateCommand<SolverViewModel>(navigationStore, (object param) => new SolverViewModel(navigationStore));
+
             _modalNavigationStore = new ModalNavigationStore();
             _modalNavigationStore.CurrentViewModelChanged += OnCurrenModalViewModelChanged;
             _puzzleGenerator = new PuzzleGenerator();
+        }
+
+        private bool CanContinue()
+        {
+            return File.Exists("savedGame.xml");
+        }
+
+        private void OnContinue()
+        {
+            GameBoard = _xmlHandler.Read<SudokuBoard>("savedGame.xml");
+            NavigateToGameCommand.Execute(GameBoard);
         }
 
         private void CreateNewGame(string difficulty)

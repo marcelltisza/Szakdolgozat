@@ -9,7 +9,8 @@
       "Sudoku.UI/1.0.0": {
         "dependencies": {
           "SimpleModal.WPF": "1.0.0",
-          "Sudoku.Models": "1.0.0"
+          "Sudoku.Models": "1.0.0",
+          "Sudoku.Services": "1.0.0"
         },
         "runtime": {
           "Sudoku.UI.dll": {}
@@ -26,6 +27,14 @@
       "Sudoku.Models/1.0.0": {
         "runtime": {
           "Sudoku.Models.dll": {}
+        }
+      },
+      "Sudoku.Services/1.0.0": {
+        "dependencies": {
+          "Sudoku.Models": "1.0.0"
+        },
+        "runtime": {
+          "Sudoku.Services.dll": {}
         }
       }
     }
@@ -44,6 +53,11 @@
       "hashPath": "simplemodal.wpf.1.0.0.nupkg.sha512"
     },
     "Sudoku.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sudoku.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

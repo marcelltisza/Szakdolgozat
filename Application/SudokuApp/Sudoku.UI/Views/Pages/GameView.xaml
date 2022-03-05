@@ -147,9 +147,11 @@
                                 </Button.Background>
                             </Button>
                             <Button x:Name="RedoButton" 
-                                Margin="10 15 10 5"
-                                Grid.Column="4"
-                                BorderThickness="0">
+                                    Margin="10 15 10 5"
+                                    IsHitTestVisible="{Binding RedoHistory.Count, Converter={StaticResource CountToBoolConverter}}"
+                                    Grid.Column="4"
+                                    BorderThickness="0"
+                                    Command="{Binding RedoCommand}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="../../Resources/Images/History/history_redo.png"/>
                                 </Button.Background>

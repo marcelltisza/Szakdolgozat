@@ -6,6 +6,7 @@ using Sudoku.UI.Commands;
 using Sudoku.UI.Properties;
 using Sudoku.UI.Stores;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
@@ -22,9 +23,11 @@ namespace Sudoku.UI.ViewModels
         public RelayCommand UndoCommand { get; set; }
         public RelayCommand ResetCommand { get; set; }
         public RelayCommand UndoPreceedingCommand { get; set; }
+        public RelayCommand RedoCommand { get; set; }
 
         public HistoryEntry SelectedHistoryEntry { get; set; }
         public ObservableCollection<HistoryEntry> History { get; set; }
+        public ObservableCollection<HistoryEntry> RedoHistory { get; set; }
         private DispatcherTimer _timer;
         private TimeSpan playTime;
         private bool isGameOver;
@@ -112,20 +115,33 @@ namespace Sudoku.UI.ViewModels
         public GameViewModel(NavigationStore navigationStore, SudokuBoard board)
         {
             Difficulty = board.Difficulty;
+            PlayTime = board.PlayTime;
             this.navigationStore = navigationStore;
             Board = board;
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
             ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
+            RedoCommand = new RelayCommand(OnRedo);
+            
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
             NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, OnNavigateToMenu);
 
             History = Board.History;
+            RedoHistory = Board.RedoHistory;
 
             _timer = new DispatcherTimer();
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += _timer_Tick;
             _timer.Start();
+        }
+
+        private void OnRedo()
+        {
+            var firstEntry = RedoHistory.FirstOrDefault();
+            firstEntry.Redo(Board);
+            History.Insert(0, firstEntry);
+            RedoHistory.Remove(firstEntry);
+            History.Remove(History.First());
         }
         #endregion
 
@@ -133,6 +149,7 @@ namespace Sudoku.UI.ViewModels
 
         private MenuViewModel OnNavigateToMenu(object param)
         {
+            Board.PlayTime = PlayTime;
             if (!GameOverViewIsOpen)
                 _xmlHandler.Write<SudokuBoard>(Board, "savedGame.xml");
             return new MenuViewModel(navigationStore);
@@ -143,7 +160,8 @@ namespace Sudoku.UI.ViewModels
             while (History.Count > 0)
             {
                 var firstEntry = History.FirstOrDefault();
-                firstEntry.Undo();
+                firstEntry.Undo(Board);
+                RedoHistory.Insert(0, firstEntry);
                 History.Remove(firstEntry);
                 History.Remove(History.First());
             }
@@ -159,7 +177,8 @@ namespace Sudoku.UI.ViewModels
             if (SelectedHistoryEntry == null)
             {
                 var firstEntry = History.FirstOrDefault();
-                firstEntry.Undo();
+                firstEntry.Undo(Board);
+                RedoHistory.Insert(0, firstEntry);
                 History.Remove(firstEntry);
                 History.Remove(History.First());
             }
@@ -175,7 +194,8 @@ namespace Sudoku.UI.ViewModels
 
             for (int i = 0; i <= maxIndex; i++)
             {
-                History.First().Undo();
+                History.First().Undo(Board);
+                RedoHistory.Insert(0, History.First());
                 History.Remove(History.First());
                 History.Remove(History.First());
             }

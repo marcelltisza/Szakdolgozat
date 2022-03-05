@@ -2,746 +2,624 @@
 <SudokuBoard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <History>
     <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>0</Column>
-      </Cell>
+      <Row>5</Row>
+      <Column>3</Column>
       <OldValue />
-      <NewValue>6</NewValue>
+      <NewValue>5</NewValue>
       <Content>CellValue</Content>
       <Action>Add</Action>
     </HistoryEntry>
     <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>0</Column>
-      </Cell>
+      <Row>5</Row>
+      <Column>4</Column>
       <OldValue />
-      <NewValue>6</NewValue>
+      <NewValue>5</NewValue>
       <Content>CellValue</Content>
       <Action>Add</Action>
     </HistoryEntry>
     <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>0</Column>
-      </Cell>
-      <OldValue>6</OldValue>
-      <NewValue />
-      <Content>CellValue</Content>
-      <Action>Delete</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>0</Column>
-      </Cell>
+      <Row>6</Row>
+      <Column>5</Column>
       <OldValue />
-      <NewValue>6</NewValue>
+      <NewValue>5</NewValue>
       <Content>CellValue</Content>
       <Action>Add</Action>
     </HistoryEntry>
     <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>1</Column>
-      </Cell>
+      <Row>8</Row>
+      <Column>6</Column>
       <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>2</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>2</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>1</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>0</Column>
-      </Cell>
-      <OldValue>6</OldValue>
-      <NewValue />
-      <Content>CellValue</Content>
-      <Action>Delete</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>0</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>0</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
-      <Content>CellValue</Content>
-      <Action>Add</Action>
-    </HistoryEntry>
-    <HistoryEntry>
-      <Cell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>6</Column>
-      </Cell>
-      <OldValue />
-      <NewValue>6</NewValue>
+      <NewValue>5</NewValue>
       <Content>CellValue</Content>
       <Action>Add</Action>
     </HistoryEntry>
   </History>
+  <RedoHistory />
+  <PlayTime>PT17S</PlayTime>
   <Rows>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>0</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>3</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>0</Row>
+        <Column>8</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>8</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>5</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>6</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>1</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>2</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>4</Column>
         <Value>7</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>4</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>6</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>7</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>1</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>3</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>6</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>3</Row>
+        <Column>7</Column>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>7</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>0</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>3</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>5</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>8</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>8</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>1</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>1</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>2</Column>
         <Value>1</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>2</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>0</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>0</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>0</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
+        <Row>5</Row>
         <Column>4</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>5</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>5</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>7</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>5</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>1</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>2</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>4</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>5</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>6</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>7</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>2</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>3</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>0</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>5</Column>
         <Value>3</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>5</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>6</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>8</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
   </Rows>
@@ -749,586 +627,586 @@
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>0</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>0</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>0</Column>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>0</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>1</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>3</Row>
+        <Column>1</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>1</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>1</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>1</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>2</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>2</Column>
         <Value>1</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>2</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>2</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>2</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>3</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>3</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>3</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>3</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>3</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>4</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>4</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>4</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>1</Row>
+        <Column>5</Column>
         <Value>6</Value>
         <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>5</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>5</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>5</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>5</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>5</Column>
         <Value>3</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>5</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>1</Row>
+        <Column>6</Column>
         <Value>2</Value>
         <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>6</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>6</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>6</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>6</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>7</Column>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>4</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>5</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>6</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>6</Column>
         <Value>5</Value>
         <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>0</Row>
+        <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>1</Row>
+        <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>7</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
         <Row>3</Row>
         <Column>7</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>7</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>7</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>9</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>8</Column>
+        <Value>9</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>8</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>8</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
   </Columns>
@@ -1336,586 +1214,586 @@
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>0</Row>
+        <Column>0</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>0</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>1</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>2</Column>
         <Value>2</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>2</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>0</Row>
+        <Column>3</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>1</Row>
+        <Column>5</Column>
         <Value>6</Value>
         <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>5</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>4</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>0</Row>
+        <Column>8</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>8</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>1</Row>
+        <Column>6</Column>
         <Value>2</Value>
         <Notes>000000000</Notes>
-        <Row>1</Row>
-        <Column>6</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>6</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>6</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>7</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>1</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>0</Column>
         <Value>7</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>0</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>1</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>1</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>2</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>3</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>3</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>5</Column>
         <Value>1</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>5</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>3</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>4</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>5</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>3</Row>
+        <Column>6</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>6</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>3</Row>
+        <Column>7</Column>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>7</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>8</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>8</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>7</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>1</Column>
         <Value>2</Value>
         <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>1</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>2</Column>
         <Value>7</Value>
         <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>2</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>2</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>2</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>5</Value>
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>0</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>4</Column>
         <Value>1</Value>
         <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>4</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>5</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>3</Column>
         <Value>7</Value>
         <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>5</Column>
         <Value>3</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>5</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>6</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>7</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>7</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>6</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>7</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>6</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>8</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
   </Minigrids>
@@ -1923,588 +1801,588 @@
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>0</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>3</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>0</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>0</Row>
+        <Column>8</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>0</Row>
-        <Column>8</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>5</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>6</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>1</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>1</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>2</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>2</Row>
+        <Column>4</Column>
         <Value>7</Value>
         <Notes>000000000</Notes>
-        <Row>2</Row>
-        <Column>4</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>6</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>7</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>2</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>1</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>3</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>6</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>3</Row>
+        <Column>7</Column>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>3</Row>
-        <Column>7</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>3</Row>
         <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>0</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>3</Column>
         <Value>9</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>3</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>5</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>4</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>4</Row>
+        <Column>8</Column>
         <Value>8</Value>
         <Notes>000000000</Notes>
-        <Row>4</Row>
-        <Column>8</Column>
       </SudokuCell>
     </ArrayOfSudokuCell>
     <ArrayOfSudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>1</Column>
         <Value>4</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>1</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>2</Column>
         <Value>1</Value>
         <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>2</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>5</Row>
         <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>5</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>0</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>2</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>1</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>8</Value>
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>6</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>0</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
-        <Value>7</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>4</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>5</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value>6</Value>
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>6</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>7</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>7</Row>
-        <Column>8</Column>
-      </SudokuCell>
-    </ArrayOfSudokuCell>
-    <ArrayOfSudokuCell>
-      <SudokuCell>
-        <IsFixed>true</IsFixed>
         <Value>5</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>0</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>1</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>2</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>3</Column>
-      </SudokuCell>
-      <SudokuCell>
-        <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
-        <Row>8</Row>
+        <Row>5</Row>
         <Column>4</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>5</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>5</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>5</Row>
+        <Column>7</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>5</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>1</Column>
+        <Value>2</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>2</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>4</Column>
+        <Value>1</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>5</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>6</Column>
+        <Value>6</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>6</Row>
+        <Column>7</Column>
+        <Value>8</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>6</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>0</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>2</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>7</Row>
+        <Column>3</Column>
+        <Value>7</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>5</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>6</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>7</Row>
+        <Column>8</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+    </ArrayOfSudokuCell>
+    <ArrayOfSudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>0</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>1</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>2</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>3</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>false</IsFixed>
+        <Row>8</Row>
+        <Column>4</Column>
+        <Value />
+        <Notes>000000000</Notes>
+      </SudokuCell>
+      <SudokuCell>
+        <IsFixed>true</IsFixed>
+        <Row>8</Row>
+        <Column>5</Column>
         <Value>3</Value>
         <Notes>000000000</Notes>
-        <Row>8</Row>
-        <Column>5</Column>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>6</Column>
+        <Value>5</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>false</IsFixed>
-        <Value />
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>7</Column>
+        <Value />
+        <Notes>000000000</Notes>
       </SudokuCell>
       <SudokuCell>
         <IsFixed>true</IsFixed>
-        <Value>4</Value>
-        <Notes>000000000</Notes>
         <Row>8</Row>
         <Column>8</Column>
+        <Value>4</Value>
+        <Notes>000000000</Notes>
       </SudokuCell>
     </ArrayOfSudokuCell>
   </Cells>
-  <Difficulty>Medium</Difficulty>
+  <Difficulty>Easy</Difficulty>
 </SudokuBoard>

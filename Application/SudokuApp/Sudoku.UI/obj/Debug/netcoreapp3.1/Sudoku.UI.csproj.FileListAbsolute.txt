@@ -7,12 +7,17 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.UI.pdb
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\ModalControl.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Models.dll
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Models.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.pdb
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll.config
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\GameView.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\LeaderboardView.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\MenuView.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\OptionsView.g.cs
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.g.cs
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\NumberSelector.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\SelectDifficulty.g.cs
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\SudokuBorders.g.cs
@@ -26,6 +31,8 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\LeaderboardView.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\MenuView.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\OptionsView.baml
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.baml
+C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\NumberSelector.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\SelectDifficulty.baml
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\SudokuBorders.baml
@@ -39,10 +46,3 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.pdb
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.genruntimeconfig.cache
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.g.cs
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\UserControls\GameOver.baml
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.pdb
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\bin\Debug\netcoreapp3.1\Sudoku.Services.dll.config
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.g.cs
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Views\Pages\SolverView.baml

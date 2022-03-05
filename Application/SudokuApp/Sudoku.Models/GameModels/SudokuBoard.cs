@@ -1,5 +1,6 @@
 ﻿using Sudoku.Models.Enumerations;
 using Sudoku.Models.Events;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace Sudoku.Models.GameModels
     public class SudokuBoard
     {
         public ObservableCollection<HistoryEntry> History { get; set; }
+        public ObservableCollection<HistoryEntry> RedoHistory { get; set; }
+        public TimeSpan PlayTime { get; set; }
         public SudokuCell[][] Rows { get; set; }
         public SudokuCell[][] Columns { get; set; }
         public SudokuCell[][] Minigrids { get; set; }
@@ -39,6 +42,7 @@ namespace Sudoku.Models.GameModels
         public SudokuBoard()
         {
             History = new ObservableCollection<HistoryEntry>();
+            RedoHistory = new ObservableCollection<HistoryEntry>();
         }
 
         private void OnCellChanged(object sender, CellChangedEventArgs e)
@@ -48,7 +52,8 @@ namespace Sudoku.Models.GameModels
             {
                 History.Insert(0, new HistoryEntry
                 {
-                    Cell = cell,
+                    Row = cell.Row,
+                    Column = cell.Column,
                     OldValue = e.OldValue,
                     NewValue = e.NewValue,
                     Content = e.TargetContent

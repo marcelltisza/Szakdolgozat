@@ -83,18 +83,10 @@
                     FontSize="40"
                     HorizontalAlignment="Right"
                     BorderThickness="3"
-                    IsEnabled="False"
                     FontWeight="DemiBold"
-                    Margin="0 0 0 20">
-                    Options
-                </Button>
-                <Button Width="250"
-                    HorizontalAlignment="Right"
-                    FontWeight="DemiBold"
-                    BorderThickness="3"
-                    IsEnabled="False"
-                    FontSize="40">
-                    Leaderboard
+                    Margin="0 0 0 20"
+                        Command="{Binding ExitCommand}">
+                    Exit
                 </Button>
             </StackPanel>
         </Grid>

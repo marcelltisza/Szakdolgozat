@@ -147,12 +147,11 @@
                       Grid.Row="1"
                       Grid.Column="10"
                       Margin="5"  
+                      Background="WhiteSmoke"
                       VerticalContentAlignment="Center"
                       HorizontalContentAlignment="Center" 
                       IsChecked="{Binding NoteMode}">
-            <ToggleButton.Background>
-                <ImageBrush ImageSource="..\..\Resources\Images\PlayArea\game_note.png" Stretch="Uniform"/>
-            </ToggleButton.Background>
+            <Image Source="..\..\Resources\Images\PlayArea\game_note.png" Stretch="Uniform"/>
         </ToggleButton>
         
     </Grid>

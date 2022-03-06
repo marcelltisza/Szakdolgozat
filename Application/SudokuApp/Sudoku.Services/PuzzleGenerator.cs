@@ -193,18 +193,7 @@ namespace Sudoku.Services
                             hasUniqueSolution = false;
                             break;
                         }
-                    }
-                        
-                    //var isFull = board.IsFull();
-                    //var hasErrors = board.HasErrors();
-                    //if (board.IsFull() && !board.HasErrors())
-                    //{
-                    //    hasUniqueSolution = false;
-                    //    break;
-                    //}
-                    
-                    
-                        
+                    }  
                     board.Cells = CopyCells(unchangedVersionOfBoard);
                 }
             }
@@ -224,12 +213,13 @@ namespace Sudoku.Services
                     if (!string.IsNullOrEmpty(board.Cells[i][j].Value))
                     {
                         board.Cells[i][j].IsFixed = true;
-                        board.Cells[i][j].Row = i;
-                        board.Cells[i][j].Column = j;
                     }
+                    board.Cells[i][j].Row = i;
+                    board.Cells[i][j].Column = j;
                 }
             }
             board.History.Clear();
+            board.RedoHistory.Clear();
         }
 
         private SudokuCell[][] CopyCells(SudokuCell[][] cellsToCopy)

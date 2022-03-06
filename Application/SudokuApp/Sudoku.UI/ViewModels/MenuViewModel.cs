@@ -7,6 +7,7 @@ using Sudoku.UI.Stores;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Sudoku.UI.ViewModels
@@ -18,6 +19,7 @@ namespace Sudoku.UI.ViewModels
         public ICommand NewGameCommand { get; }
         public ICommand CreateNewGameCommand { get; }
         public ICommand ContinueCommand { get; }
+        public RelayCommand ExitCommand { get; }
 
         private readonly ModalNavigationStore _modalNavigationStore;
         private bool isOpen;
@@ -58,6 +60,7 @@ namespace Sudoku.UI.ViewModels
         {
             NewGameCommand = new RelayCommand(NewGameExecute);
             ContinueCommand = new RelayCommand(OnContinue, CanContinue);
+            ExitCommand = new RelayCommand(OnExit);
             
             CreateNewGameCommand = new RelayCommand<string>(CreateNewGame);
             NavigateToGameCommand = new NavigateCommand<GameViewModel>(navigationStore, (object board) => new GameViewModel(navigationStore, (SudokuBoard)board));
@@ -66,6 +69,11 @@ namespace Sudoku.UI.ViewModels
             _modalNavigationStore = new ModalNavigationStore();
             _modalNavigationStore.CurrentViewModelChanged += OnCurrenModalViewModelChanged;
             _puzzleGenerator = new PuzzleGenerator();
+        }
+
+        private void OnExit()
+        {
+            Application.Current.MainWindow.Close();
         }
 
         private bool CanContinue()

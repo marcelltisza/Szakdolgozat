@@ -46,4 +46,3 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\De
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.pdb
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.genruntimeconfig.cache
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.UI\obj\Debug\netcoreapp3.1\Sudoku.UI.csproj.CopyComplete

@@ -32,7 +32,7 @@
             <!-- UPPER CONTROL ITEMS -->
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2.5*"/>
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="1">
@@ -45,33 +45,36 @@
                         <ColumnDefinition Width="10*"/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <Button x:Name="MenuButton"
-                    Margin="20 0 0 0"
-                    BorderThickness="0"
-                    Command="{Binding NavigateToMenuCommand}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="../../Resources/Images/PlayArea/game_back.png" Stretch="Uniform"/>
-                        </Button.Background>
+                            Grid.Column="0"
+                            FontWeight="Bold"
+                            Width="90"
+                            FontSize="15"
+                            BorderThickness="3"
+                            Margin="0 0 0 0"
+                            Grid.ColumnSpan="3"
+                            Command="{Binding NavigateToMenuCommand}">
+                        Back
                     </Button>
-                    <Button x:Name="SettingsButton" 
-                    BorderThickness="0"
-                    Margin="0 0 20 0"
-                    Grid.Column="7">
-                        <Button.Background>
-                            <ImageBrush ImageSource="../../Resources/Images/PlayArea/game_settings.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button x:Name="HintButton" 
-                    BorderThickness="0"
-                    Margin="0 0 20 0"
-                    Grid.Column="6">
-                        <Button.Background>
-                            <ImageBrush ImageSource="..\..\Resources\Images\PlayArea\game_hint.png"/>
-                        </Button.Background>
+                    <Button x:Name="SolveButton" 
+                            BorderThickness="3"
+                            Grid.Column="6"
+                            Width="110"
+                            Grid.ColumnSpan="3">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="..\..\Resources\Images\PlayArea\game_hint.png"
+/>
+                            <Label FontWeight="Bold"
+                                   FontSize="15"
+                                   VerticalContentAlignment="Center">
+                                Solve
+                            </Label>
+                        </StackPanel>
                     </Button>
                 </Grid>
             </Grid>
@@ -128,33 +131,30 @@
                             </Label>
                             <Button x:Name="ResetButton" 
                                 IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
-                                BorderThickness="0"
+                                    Background="Transparent"
+                                    BorderThickness="0"
                                 Grid.Column="2"
                                 Margin="10 15 10 5"
                                 Command="{Binding ResetCommand}">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="../../Resources/Images/PlayArea/game_reset.png"/>
-                                </Button.Background>
+                                <Image Source="../../Resources/Images/PlayArea/game_reset.png"/>
                             </Button>
                             <Button x:Name="UndoButton" 
                                 IsHitTestVisible="{Binding History.Count, Converter={StaticResource CountToBoolConverter}}"
                                 Grid.Column="3"
                                 BorderThickness="0"
                                 Margin="10 15 10 5"
+                                    Background="Transparent"
                                 Command="{Binding UndoCommand}">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="../../Resources/Images/History/history_undo.png"/>
-                                </Button.Background>
+                                <Image Source="../../Resources/Images/History/history_undo.png"/>
                             </Button>
                             <Button x:Name="RedoButton" 
                                     Margin="10 15 10 5"
                                     IsHitTestVisible="{Binding RedoHistory.Count, Converter={StaticResource CountToBoolConverter}}"
                                     Grid.Column="4"
+                                    Background="Transparent"
                                     BorderThickness="0"
                                     Command="{Binding RedoCommand}">
-                                <Button.Background>
-                                    <ImageBrush ImageSource="../../Resources/Images/History/history_redo.png"/>
-                                </Button.Background>
+                                <Image Source="../../Resources/Images/History/history_redo.png"/>
                             </Button>
                         </Grid>
                         <ListView x:Name="HistoryList"

@@ -91,7 +91,7 @@ namespace Sudoku.UI.ViewModels
         private void OnSolvePuzzle()
         {
             PuzzleSolver solver = new PuzzleSolver();
-            solver.SolveSudoku(Board, 9);
+            solver.SolveSudoku(Board);
         }
 
         private void OnClick(SudokuCell cell)

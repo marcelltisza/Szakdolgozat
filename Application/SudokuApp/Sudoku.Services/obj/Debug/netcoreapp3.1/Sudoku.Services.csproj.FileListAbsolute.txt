@@ -7,6 +7,5 @@ C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.csproj.CoreCompileInputs.cache
-C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.csproj.CopyComplete
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.dll
 C:\Users\Lenovo\Source\Repos\Szakdolgozat\Application\SudokuApp\Sudoku.Services\obj\Debug\netcoreapp3.1\Sudoku.Services.pdb

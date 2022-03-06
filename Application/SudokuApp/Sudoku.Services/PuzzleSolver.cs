@@ -46,15 +46,15 @@ namespace Sudoku.Services
             return true;
         }
 
-        public bool SolveSudoku(SudokuBoard sudokuBoard, int n)
+        public bool SolveSudoku(SudokuBoard sudokuBoard)
         {
             var board = sudokuBoard.Cells;
             int row = -1;
             int col = -1;
             bool isEmpty = true;
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < 9; i++)
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < 9; j++)
                 {
                     if (board[i][j].Value == "")
                     {
@@ -76,14 +76,14 @@ namespace Sudoku.Services
                 return true;
             }
 
-            for (int num = 1; num <= n; num++)
+            for (int num = 1; num <= 9; num++)
             {
                 if (IsSafe(sudokuBoard, row, col, num))
                 {
                     
                     board[row][col].Value = num.ToString();
 
-                    if (SolveSudoku(sudokuBoard, n))
+                    if (SolveSudoku(sudokuBoard))
                     {
                         return true;
                     }

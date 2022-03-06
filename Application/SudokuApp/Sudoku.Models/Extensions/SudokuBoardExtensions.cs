@@ -6,13 +6,27 @@ namespace Sudoku.Models.Extensions
 {
     public static class SudokuBoardExtensions
     {
-        public static bool CheckErrorsForCell(this SudokuBoard board, int row, int column)
+        public static bool CellHasError(this SudokuBoard board, int row, int column)
         {
             var rowResult = RowErrorFound(board, row);
             var columnResult = ColumnErrorFound(board, column);
             var mingridResult = MingridErrorFound(board, row, column);
-            var result = rowResult && columnResult && mingridResult;
+            var result = rowResult || columnResult || mingridResult;
             return result;
+        }
+
+        public static bool HasErrors(this SudokuBoard board)
+        {
+            for (int i = 0; i < board.Cells.Length; i++)
+            {
+                for (int j = 0; j < board.Cells[i].Length; j++)
+                {
+                    if (board.CellHasError(i, j))
+                        return true;
+                }
+            }
+
+            return false;
         }
 
         public static bool IsFull(this SudokuBoard board)
@@ -34,7 +48,7 @@ namespace Sudoku.Models.Extensions
             {
                 for (int j = 0; j < board.Cells[i].Length; j++)
                 {
-                    if (board.CheckErrorsForCell(i, j) == false)
+                    if (board.CellHasError(i, j) == false)
                         return false;
                 }
             }
@@ -49,9 +63,9 @@ namespace Sudoku.Models.Extensions
 
             if (distinctItems != allItems)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         private static bool ColumnErrorFound(SudokuBoard board, int column)
@@ -62,9 +76,9 @@ namespace Sudoku.Models.Extensions
 
             if (distinctItems != allItems)
             {
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         private static bool MingridErrorFound(SudokuBoard board, int row, int column)
@@ -115,10 +129,10 @@ namespace Sudoku.Models.Extensions
 
             if (distinctItems != allItems)
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

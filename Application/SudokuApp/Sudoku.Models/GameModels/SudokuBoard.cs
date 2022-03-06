@@ -43,6 +43,21 @@ namespace Sudoku.Models.GameModels
         {
             History = new ObservableCollection<HistoryEntry>();
             RedoHistory = new ObservableCollection<HistoryEntry>();
+            InitializeCells();
+        }
+
+        private void InitializeCells()
+        {
+            var cells = new SudokuCell[9][];
+            for (int i = 0; i < cells.Length; i++)
+            {
+                cells[i] = new SudokuCell[9];
+                for (int j = 0; j < cells[i].Length; j++)
+                {
+                    cells[i][j] = new SudokuCell { Row = i, Column = j };
+                }
+            }
+            Cells = cells;
         }
 
         private void OnCellChanged(object sender, CellChangedEventArgs e)

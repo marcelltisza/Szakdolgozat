@@ -24,6 +24,7 @@ namespace Sudoku.UI.ViewModels
         public RelayCommand ResetCommand { get; set; }
         public RelayCommand UndoPreceedingCommand { get; set; }
         public RelayCommand RedoCommand { get; set; }
+        public RelayCommand SolveCommand { get; set; }
 
         public HistoryEntry SelectedHistoryEntry { get; set; }
         public ObservableCollection<HistoryEntry> History { get; set; }
@@ -51,9 +52,9 @@ namespace Sudoku.UI.ViewModels
             }
         }
 
-        public bool GameOverViewIsOpen 
-        { 
-            get => gameOverViewIsOpen; 
+        public bool GameOverViewIsOpen
+        {
+            get => gameOverViewIsOpen;
             set
             {
                 if (gameOverViewIsOpen != value)
@@ -107,6 +108,23 @@ namespace Sudoku.UI.ViewModels
         }
 
         private XmlHandler _xmlHandler = new XmlHandler();
+        private PuzzleSolver _solver = new PuzzleSolver();
+        private string logMessage;
+
+        public string LogDifficultyLevel { get; set; }
+
+        public string LogMessage 
+        { 
+            get => logMessage;
+            set 
+            {
+                if (logMessage != value)
+                {
+                    logMessage = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(LogMessage)));
+                }
+            } 
+        }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         #endregion
@@ -114,6 +132,8 @@ namespace Sudoku.UI.ViewModels
         #region Constructor
         public GameViewModel(NavigationStore navigationStore, SudokuBoard board)
         {
+            LogDifficultyLevel = $"Difficulty: {board.Difficulty}";
+            LogMessage = $"It took less than {board.GenerationTime.ToString()} ms to generate the puzzle.";
             Difficulty = board.Difficulty;
             PlayTime = board.PlayTime;
             this.navigationStore = navigationStore;
@@ -122,7 +142,8 @@ namespace Sudoku.UI.ViewModels
             ResetCommand = new RelayCommand(OnReset);
             UndoCommand = new RelayCommand(OnUndo);
             RedoCommand = new RelayCommand(OnRedo);
-            
+            SolveCommand = new RelayCommand(OnSolve);
+
             UndoPreceedingCommand = new RelayCommand(OnUndoPreceeding);
             NavigateToMenuCommand = new NavigateCommand<MenuViewModel>(navigationStore, OnNavigateToMenu);
 
@@ -133,6 +154,15 @@ namespace Sudoku.UI.ViewModels
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Tick += _timer_Tick;
             _timer.Start();
+        }
+
+        private void OnSolve()
+        {
+            var startTime = DateTime.Now;
+            _solver.SolveSudoku(Board);
+            var endTime = DateTime.Now;
+            var duration = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
+            LogMessage = $"It took less than {duration} ms to solve the puzzle";
         }
 
         private void OnRedo()
@@ -211,6 +241,9 @@ namespace Sudoku.UI.ViewModels
             {
                 cell.Value = SelectedNumber;
             }
+
+            var full = Board.IsFull();
+            var solved = Board.IsSolved();
 
             if (Board.IsFull() && Board.IsSolved())
             {

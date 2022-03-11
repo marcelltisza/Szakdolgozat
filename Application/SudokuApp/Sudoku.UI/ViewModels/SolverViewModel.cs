@@ -67,9 +67,9 @@ namespace Sudoku.UI.ViewModels
             ClickCommand = new RelayCommand<SudokuCell>(OnClick);
 
             Cells = new ObservableCollection<SudokuCell>();
-            for (int i = 0; i < Board.Cells.GetLength(0); i++)
+            for (int i = 0; i < Board.Cells.Length; i++)
             {
-                for (int j = 0; j < Board.Cells.GetLength(1); j++)
+                for (int j = 0; j < Board.Cells[i].Length; j++)
                 {
                     Cells.Add(Board.Cells[i][j]);
                 }
@@ -78,9 +78,9 @@ namespace Sudoku.UI.ViewModels
 
         private void OnClear()
         {
-            for (int i = 0; i < Board.Cells.GetLength(0); i++)
+            for (int i = 0; i < Board.Cells.Length; i++)
             {
-                for (int j = 0; j < Board.Cells.GetLength(1); j++)
+                for (int j = 0; j < Board.Cells[i].Length; j++)
                 {
                     Board.Cells[i][j].Value = "";
                     Board.Cells[i][j].IsFixed = false;

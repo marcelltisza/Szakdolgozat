@@ -18,6 +18,8 @@ namespace Sudoku.Models.GameModels
         public SudokuCell[][] Minigrids { get; set; }
         private SudokuCell[][] _cells;
 
+        public int GenerationTime { get; set; }
+
         public SudokuCell[][] Cells 
         { 
             get => _cells; 

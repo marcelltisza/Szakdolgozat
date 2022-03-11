@@ -36,6 +36,7 @@ namespace Sudoku.Services
 
         private SudokuBoard GenerateEasyPuzzle()
         {
+            var startTime = DateTime.Now;
             var board = new SudokuBoard();
             board.Difficulty = DifficultyType.Easy;
             Random random = new Random();
@@ -47,14 +48,18 @@ namespace Sudoku.Services
             _solver.SolveSudoku(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
+            var endTime = DateTime.Now;
+
+            board.GenerationTime = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
 
             return board;
         }
 
         private SudokuBoard GenerateMediumPuzzle()
         {
+            var startTime = DateTime.Now;
             var board = new SudokuBoard();
-            board.Difficulty = DifficultyType.Easy;
+            board.Difficulty = DifficultyType.Medium;
             Random random = new Random();
             var numberOfHoles = random.Next(16, 18);
             var lowerBound = 3;
@@ -64,14 +69,18 @@ namespace Sudoku.Services
             _solver.SolveSudoku(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
+            var endTime = DateTime.Now;
+
+            board.GenerationTime = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
 
             return board;
         }
 
         private SudokuBoard GenerateHardPuzzle()
         {
+            var startTime = DateTime.Now;
             var board = new SudokuBoard();
-            board.Difficulty = DifficultyType.Easy;
+            board.Difficulty = DifficultyType.Hard;
             Random random = new Random();
             var numberOfHoles = TotalNumberOfCells - random.Next(14, 16);
             var lowerBound = 2;
@@ -81,6 +90,9 @@ namespace Sudoku.Services
             _solver.SolveSudoku(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
+            var endTime = DateTime.Now;
+
+            board.GenerationTime = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
 
             return board;
         }

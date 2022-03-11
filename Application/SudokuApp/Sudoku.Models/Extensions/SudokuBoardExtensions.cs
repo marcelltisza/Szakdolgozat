@@ -8,10 +8,10 @@ namespace Sudoku.Models.Extensions
     {
         public static bool CellHasError(this SudokuBoard board, int row, int column)
         {
-            var rowResult = RowErrorFound(board, row);
-            var columnResult = ColumnErrorFound(board, column);
-            var mingridResult = MingridErrorFound(board, row, column);
-            var result = rowResult || columnResult || mingridResult;
+            var rowHasError = RowErrorFound(board, row);
+            var columnHasError = ColumnErrorFound(board, column);
+            var minigridHasError = MingridErrorFound(board, row, column);
+            var result = rowHasError || columnHasError || minigridHasError;
             return result;
         }
 
@@ -48,7 +48,7 @@ namespace Sudoku.Models.Extensions
             {
                 for (int j = 0; j < board.Cells[i].Length; j++)
                 {
-                    if (board.CellHasError(i, j) == false)
+                    if (board.CellHasError(i, j))
                         return false;
                 }
             }

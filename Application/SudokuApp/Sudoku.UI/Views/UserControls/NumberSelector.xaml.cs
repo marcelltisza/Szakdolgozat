@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Media;
 
 namespace Sudoku.UI.Views.UserControls
 {
@@ -34,26 +32,6 @@ namespace Sudoku.UI.Views.UserControls
             InitializeComponent();
 
             DataContext = this;
-        }
-
-        private void ToggleButton_Click(object sender, RoutedEventArgs e)
-        {
-            var toggleButton = sender as ToggleButton;
-
-            if (toggleButton.IsChecked == true)
-                SelectedNumber = ((TextBlock)toggleButton.Content).Text;
-            else
-                SelectedNumber = "";
-
-            for (int i = 0; i < 9; i++)
-            {
-                var button = NumbersGrid.Children[i] as ToggleButton;
-                var textblock = (TextBlock)button.Content;
-                if (textblock.Text != SelectedNumber && button.Name != "NoteToggle")
-                {
-                    button.IsChecked = false;
-                }
-            }
         }
     }
 }

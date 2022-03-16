@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sudoku.UI {
+namespace Sudoku.UI.Settings {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

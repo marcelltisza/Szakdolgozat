@@ -1,6 +1,5 @@
 ﻿using Sudoku.Models.GameModels;
 using System;
-using System.Threading.Tasks;
 
 namespace Sudoku.Services
 {
@@ -80,7 +79,7 @@ namespace Sudoku.Services
             {
                 if (IsSafe(sudokuBoard, row, col, num))
                 {
-                    
+
                     board[row][col].Value = num.ToString();
 
                     if (SolveSudoku(sudokuBoard))
@@ -95,5 +94,31 @@ namespace Sudoku.Services
             }
             return false;
         }
+
+        //public int SolveSudoku(SudokuBoard board, int i=0, int j=0, int count=0 /*initailly called with 0*/)
+        //{
+        //    var cells = board.Cells;
+        //    if (i == 9)
+        //    {
+        //        i = 0;
+        //        if (++j == 9)
+        //            return 1 + count;
+        //    }
+        //    if (cells[i][j].Value != "")  // skip filled cells
+        //        return SolveSudoku(board, i + 1, j, count);
+        //    // search for 2 solutions instead of 1
+        //    // break, if 2 solutions are found
+        //    for (int val = 1; val <= 9 && count < 2; ++val)
+        //    {
+        //        if (IsSafe(board, i, j, val))
+        //        {
+        //            cells[i][j].Value = val.ToString();
+        //            // add additional solutions
+        //            count = SolveSudoku(board, i + 1, j, count);
+        //        }
+        //    }
+        //    cells[i][j].Value = ""; // reset on backtrack
+        //    return count;
+        //}
     }
 }

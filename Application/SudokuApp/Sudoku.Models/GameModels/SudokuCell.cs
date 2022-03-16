@@ -12,8 +12,20 @@ namespace Sudoku.Models.GameModels
 
         private string value = "";
         private string notes = "000000000";
+        private bool isFixed = false;
 
-        public bool IsFixed { get; set; } = false;
+        public bool IsFixed 
+        { 
+            get => isFixed; 
+            set
+            {
+                if (value != isFixed)
+                {
+                    isFixed = value;
+                    PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsFixed))) ;
+                }
+            }
+        }
         public int Row { get; set; }
         public int Column { get; set; }
 
@@ -41,7 +53,7 @@ namespace Sudoku.Models.GameModels
             }
         }
         public string Notes //e.g.: 100111001
-        { 
+        {
             get => notes;
             set
             {

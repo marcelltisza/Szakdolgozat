@@ -17,6 +17,9 @@ namespace Sudoku.UI.ValueConverters
             Brush brush = new SolidColorBrush(Colors.Black);
             try
             {
+                if (values[0] == null || values[1] == null)
+                    return brush;
+
                 var cellValue = values[0].ToString();
                 var selectedValue = values[1].ToString();
 

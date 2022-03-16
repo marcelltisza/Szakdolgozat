@@ -6,6 +6,7 @@ namespace Sudoku.Models.Extensions
 {
     public static class SudokuBoardExtensions
     {
+
         public static bool CellHasError(this SudokuBoard board, int row, int column)
         {
             var rowHasError = RowErrorFound(board, row);

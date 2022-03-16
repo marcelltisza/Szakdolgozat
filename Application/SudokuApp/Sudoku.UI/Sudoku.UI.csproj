@@ -89,7 +89,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="GameSettings.Designer.cs">
+    <Compile Update="Settings\GameSettings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>GameSettings.settings</DependentUpon>
@@ -101,7 +101,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="GameSettings.settings">
+    <None Update="Settings\GameSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>GameSettings.Designer.cs</LastGenOutput>
     </None>

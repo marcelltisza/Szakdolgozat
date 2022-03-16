@@ -3,7 +3,9 @@ using Sudoku.Models.Extensions;
 using Sudoku.Models.GameModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Sudoku.Services
 {
@@ -24,14 +26,26 @@ namespace Sudoku.Services
             switch (difficulty)
             {
                 case DifficultyType.Easy:
-                    return GenerateEasyPuzzle();
+                    return RunGenerator(GenerateEasyPuzzle);
                 case DifficultyType.Medium:
-                    return GenerateMediumPuzzle();
+                    return RunGenerator(GenerateMediumPuzzle);
                 case DifficultyType.Hard:
-                    return GenerateHardPuzzle();
+
+                    return RunGenerator(GenerateHardPuzzle);
                 default:
                     throw new Exception();
             }
+        }
+
+        private SudokuBoard RunGenerator(Func<SudokuBoard> generator)
+        {
+            var tasks = new List<Task<SudokuBoard>>();
+            for (int i = 0; i < 3; i++)
+            {
+                tasks.Add(Task.Run(() => generator()));
+            }
+            var res = Task.WhenAny<SudokuBoard>(tasks).Result;
+            return res.Result;
         }
 
         private SudokuBoard GenerateEasyPuzzle()
@@ -40,12 +54,13 @@ namespace Sudoku.Services
             var board = new SudokuBoard();
             board.Difficulty = DifficultyType.Easy;
             Random random = new Random();
-            var numberOfHoles = TotalNumberOfCells - random.Next(18, 25);
+            var numberOfHoles = random.Next(16, 23);
             var lowerBound = 4;
-            var cellsToDig = InitializeCellsToDig(board);
+            
 
             InitializeBoard(board, 11);
             _solver.SolveSudoku(board);
+            var cellsToDig = InitializeCellsToDig(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
             var endTime = DateTime.Now;
@@ -61,12 +76,13 @@ namespace Sudoku.Services
             var board = new SudokuBoard();
             board.Difficulty = DifficultyType.Medium;
             Random random = new Random();
-            var numberOfHoles = random.Next(16, 18);
+            var numberOfHoles = random.Next(23, 25);
             var lowerBound = 3;
-            var cellsToDig = InitializeCellsToDig(board);
+            
 
             InitializeBoard(board, 11);
             _solver.SolveSudoku(board);
+            var cellsToDig = InitializeCellsToDig(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
             var endTime = DateTime.Now;
@@ -82,12 +98,13 @@ namespace Sudoku.Services
             var board = new SudokuBoard();
             board.Difficulty = DifficultyType.Hard;
             Random random = new Random();
-            var numberOfHoles = TotalNumberOfCells - random.Next(14, 16);
+            var numberOfHoles = random.Next(25, 27);
             var lowerBound = 2;
-            var cellsToDig = InitializeCellsToDig(board);
+            
 
             InitializeBoard(board, 11);
             _solver.SolveSudoku(board);
+            var cellsToDig = InitializeCellsToDig(board);
             DigHoles(board, cellsToDig, numberOfHoles, lowerBound);
             FinalizeBoard(board);
             var endTime = DateTime.Now;
@@ -123,14 +140,15 @@ namespace Sudoku.Services
             {
                 for (int j = 0; j < board.Rows[i].Length; j++)
                 {
-                    cellsToDig.Add(new CellToDig { Row = i, Column = j });
+                    if (board.Cells[i][j].Value != "")
+                        cellsToDig.Add(new CellToDig { Row = i, Column = j });
                 }
             }
-            cellsToDig.Add(new CellToDig { Row = 4, Column = 0 });
-            cellsToDig.Add(new CellToDig { Row = 4, Column = 1 });
-            cellsToDig.Add(new CellToDig { Row = 4, Column = 2 });
-            cellsToDig.Add(new CellToDig { Row = 4, Column = 3 });
-            cellsToDig.Add(new CellToDig { Row = 4, Column = 4 });
+            for (int i = 0; i < 4; i++)
+            {
+                if (board.Cells[4][i].Value != "")
+                    cellsToDig.Add(new CellToDig { Row = 4, Column = i });
+            }
 
             return cellsToDig;
         }
@@ -138,11 +156,15 @@ namespace Sudoku.Services
         private void DigHoles(SudokuBoard board, List<CellToDig> cellsToDig, int numberOfHoles, int lowerBound)
         {
             Random random = new Random();
+            var failed = 0;
             for (int i = 0; i < numberOfHoles; i++)
             {
+
                 if (cellsToDig.Count == 0)
                 {
-                    break;
+                    cellsToDig = InitializeCellsToDig(board);
+                    failed++;
+                    //break;
                 }
 
                 var index = random.Next(0, cellsToDig.Count);
@@ -150,19 +172,19 @@ namespace Sudoku.Services
                 int column = cellsToDig[index].Column;
                 var oldValue = board.Cells[row][column].Value;
 
-                if (DigWillResultUniqueSolution(board, row, column) == false && DigWillResultUniqueSolution(board, 8 - row, 8 - column) == false)
+                if (failed == 1)
                 {
-                    i--;
-                    var isFull = board.IsFull();
-                    var hasErrors = board.HasErrors();
-                    cellsToDig.RemoveAt(index);
+                    board.Cells[row][column].Value = "";
+                    board.Cells[8 - row][8 - column].Value = "";
                     continue;
                 }
 
-                // if (DigWillResultUniqueSolution(board, 8 - row, 8 - column) == false)
-                //{
-
-                //}
+                if (DigWillResultUniqueSolution(board, row, column) == false || DigWillResultUniqueSolution(board, 8 - row, 8 - column) == false)
+                {
+                    i--;
+                    cellsToDig.RemoveAt(index);
+                    continue;
+                }
 
                 board.Cells[row][column].Value = "";
                 if (CheckRestrictions(board, lowerBound) == false)

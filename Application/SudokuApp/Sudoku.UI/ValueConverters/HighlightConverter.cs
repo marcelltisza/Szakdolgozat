@@ -18,6 +18,9 @@ namespace Sudoku.UI.ValueConverters
             };
             try
             {
+                if (values[0] == null || values[1] == null)
+                    return dropShadow;
+
                 var cellValue = values[0].ToString();
                 var selectedValue = values[1].ToString();
 

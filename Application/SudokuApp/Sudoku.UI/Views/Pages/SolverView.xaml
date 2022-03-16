@@ -198,15 +198,15 @@
                                 </TabItem>
                                 <TabItem Header="Generate">
                                     <StackPanel Orientation="Horizontal">
-                                        <StackPanel Margin="20,25,0,0">
+                                        <StackPanel Margin="20,20,0,0">
 
-                                            <RadioButton IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Easy}">
+                                            <RadioButton Margin="0,0,0,5" IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Easy}">
                                                 EASY
                                             </RadioButton>
-                                            <RadioButton IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Medium}">
+                                            <RadioButton Margin="0,0,0,5" IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Medium}">
                                                 MEDIUM
                                             </RadioButton>
-                                            <RadioButton IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Hard}">
+                                            <RadioButton Margin="0,0,0,5" IsChecked="{Binding SelectedDifficulty, Converter={StaticResource DifficultyConverter}, ConverterParameter=Hard}">
                                                 HARD
                                             </RadioButton>
                                         </StackPanel>

@@ -144,7 +144,7 @@ namespace Sudoku.Services
                         cellsToDig.Add(new CellToDig { Row = i, Column = j });
                 }
             }
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (board.Cells[4][i].Value != "")
                     cellsToDig.Add(new CellToDig { Row = 4, Column = i });
@@ -164,7 +164,6 @@ namespace Sudoku.Services
                 {
                     cellsToDig = InitializeCellsToDig(board);
                     failed++;
-                    //break;
                 }
 
                 var index = random.Next(0, cellsToDig.Count);

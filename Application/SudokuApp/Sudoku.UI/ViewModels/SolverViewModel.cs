@@ -1,4 +1,5 @@
 ﻿using Sudoku.Models.Enumerations;
+using Sudoku.Models.Extensions;
 using Sudoku.Models.GameModels;
 using Sudoku.Services;
 using Sudoku.UI.Commands;
@@ -129,11 +130,18 @@ namespace Sudoku.UI.ViewModels
 
         private void OnSolvePuzzle()
         {
-            var startTime = DateTime.Now;
-            _solver.SolveSudoku(Board);
-            var endTime = DateTime.Now;
-            var duration = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
-            LogMessages = $"Solved under {duration} ms\n" + LogMessages;
+            if (!Board.HasErrors())
+            {
+                var startTime = DateTime.Now;
+                _solver.SolveSudoku(Board);
+                var endTime = DateTime.Now;
+                var duration = (int)Math.Ceiling((endTime - startTime).TotalMilliseconds);
+                LogMessages = $"Solved under {duration} ms\n" + LogMessages;
+            }
+            else
+            {
+                LogMessages = $"Puzzle cannot be solved.\n" + LogMessages;
+            }
         }
 
         private void OnClick(SudokuCell cell)
